@@ -1,22 +1,45 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import LeftColumn from '../components/FrontPage/LeftColumn'
+import RightColumn from '../components/FrontPage/RightColumn'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+export const pageQuery = graphql`
+{
+  wpgraphql {
+    pageBy(uri: "/") {
+      content(format: RENDERED)
+      title
+    }
+  }
+}
+`
+
+const IndexPage = ({data}) => {
+
+  const {title, content} = data.wpgraphql.pageBy
+
+  return(
+    <Layout>
+      <SEO title="Home Page" />
+      <StyledMain>
+        <LeftColumn title={title} content={content}/>
+        <RightColumn/>
+      </StyledMain>
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+const StyledMain = styled.main`
+    display: grid;
+    grid-template-columns: 70% 30%; 
+    margin: 0 auto;
+    max-width: 1140px;
+    & h1 {
+        font-size: 62px;
+    }
+`
