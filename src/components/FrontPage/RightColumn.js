@@ -32,22 +32,26 @@ const PostList = () => {
     const data = useStaticQuery(graphql`
     query PostQuery {
         wpgraphql {
-          posts {
+            questions(first: 5) {
             nodes {
-              title
-              id
+                title
+                slug
+                questionId
+                pytania {
+                    acfQuestion
+                  }
             }
           }
         }
       }
   `)
-    const postTitles = data.wpgraphql.posts.nodes
+    const postTitles = data.wpgraphql.questions.nodes
 
     return (
         <ul> 
             { postTitles.map( node => (
-                <li key={node.id}>
-                    <Link to='/'>{node.title}</Link>
+                <li key={node.questionId}>
+                    <Link to='/'>{node.pytania.acfQuestion}</Link>
                 </li>
             )) }
         </ul>
