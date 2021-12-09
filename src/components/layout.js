@@ -7,19 +7,44 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import styled from 'styled-components'
+import styled, {createGlobalStyle, ThemeProvider} from 'styled-components'
 
 import Footer from './Footer/Footer'
 import Nav from'./Nav/Nav'
 
+
+const theme = {
+  font: {
+    thin: 300,
+    regular: 400,
+    bold: 700
+  },
+  colors: {
+    btnLight: "hotpink",
+  }
+}
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+`
+
 const Layout = ({ children }) => {
 
   return (
-    <MainContainer>
-      <Nav/>
-      <main>{children}</main>
-      <Footer/>
-    </MainContainer>
+      <ThemeProvider theme={theme}>
+        <MainContainer>
+          <GlobalStyle/>
+          <Nav/>
+          <main>{children}</main>
+          <Footer/>
+        </MainContainer>
+    </ThemeProvider>
   )
 }
 

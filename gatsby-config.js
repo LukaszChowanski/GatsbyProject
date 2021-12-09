@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Kit`,
+    title: `Logo`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Lukasz Ch`,
   },
@@ -13,7 +13,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraphql",
         // Url to query from
-        url: "http://nas.gansa.pl/2021/quiz/graphql",
+        url: "http://nas.gansa.pl/2021/rsgrupa/graphql",
       },
     },
     `gatsby-plugin-react-helmet`,
