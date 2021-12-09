@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link, useStaticQuery, graphql } from "gatsby"
+import TopElement from './TopElement/TopElement'
 
-// import TopElement from './TopElement/TopElement'
-// import BottomElement from './BottomElement/BottomElement'
-
-const Nav = (props) => {
+const Nav = () => {
     const data = useStaticQuery(graphql`
     query MyQuery {
       wpgraphql {
@@ -31,16 +29,18 @@ const Nav = (props) => {
   `)
   const siteTitle = data.site.siteMetadata.title
   const menuItems = data.wpgraphql.menus.nodes[0].menuItems.nodes
-  console.log(props);
     return (
         <Container>
+            <TopElement/>
             <StyledNav>
-            <div> { siteTitle } </div>
-            <MenuListOfElements>
-              {menuItems && menuItems.map( ({path, databaseId, label}) => 
-                <li key={databaseId}><Link to={path}>{label}</Link></li>)}
-            </MenuListOfElements>
-      <Button>Umów się na bezpłatną konsultację</Button>
+              <div> { siteTitle } </div>
+              <MenuListOfElements>
+                {menuItems && menuItems.map( ({path, databaseId, label}) => 
+                  <li key={databaseId}><Link to={path}>{label}</Link></li>)}
+                  <li key={1}><Link to={'/kontakt'}>Kontakt</Link></li>
+                  <li key={2}><Link to={'/page-2'}>page 2</Link></li>
+              </MenuListOfElements>
+              <Button>Umów się na bezpłatną konsultację</Button>
             </StyledNav>   
         </Container>
     )
@@ -75,13 +75,9 @@ const MenuListOfElements = styled.ul`
   list-style: none;
   margin-inline: auto;
 
-  & li {
-
-  }
-
   & a {
     font: normal normal 400 18px/21px "PT Sans";
-    color: #707070;
+    color: ${ props => props.theme.colors.btnLight };
     padding: 0.6em 1em 0.4em;
     line-height: 1;
     text-decoration: none;

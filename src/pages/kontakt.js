@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import SEO from "../components/seo"
 
 export const pageQuery = graphql`
 {
   wpgraphql {
-    pageBy(uri: "/") {
+    pageBy(uri: "/kontakt") {
       content(format: RENDERED)
       title
     }
@@ -17,14 +17,14 @@ export const pageQuery = graphql`
 
 const ContactPage = ({data}) => {
 
-    // const {title, content} = data.wpgraphql.pageBy
+    const {title, content} = data.wpgraphql.pageBy
 
     return (
     <Layout>
-      Strona w budowie
-      {/* <SEO title="Kontakt" />
+      Strona kontaktowa
+      <SEO title="Kontakt" />
       <h1>{title}</h1>
-      <section dangerouslySetInnerHTML={{ __html: content}}/> */}
+      <section dangerouslySetInnerHTML={{ __html: content}}/>
     </Layout>
 )}
   
