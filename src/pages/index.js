@@ -2,16 +2,13 @@ import React from "react"
 import styled from 'styled-components'
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
-import LeftColumn from '../components/FrontPage/LeftColumn'
-// import RightColumn from '../components/FrontPage/RightColumn'
 
 export const pageQuery = graphql`
 {
   wpgraphql {
     pageBy(uri: "/") {
-      content(format: RENDERED)
       title
     }
   }
@@ -20,15 +17,13 @@ export const pageQuery = graphql`
 
 const IndexPage = (props) => {
 
-  const {title, content} = props.data.wpgraphql.pageBy
+  const {title} = props.data.wpgraphql.pageBy
 
   return(
     <Layout>
-      <SEO title="Home Page" />
+      <SEO title={title} />
       <StyledMain>
         index.js
-        <LeftColumn title={title} content={content}/>
-        {/* <RightColumn/> */}
       </StyledMain>
     </Layout>
   )

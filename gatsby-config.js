@@ -16,6 +16,15 @@ module.exports = {
         url: "http://nas.gansa.pl/2021/rsgrupa/graphql",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `PT Sans\:400,700`
+        ],
+        display: 'swap'
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
