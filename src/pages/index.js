@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
+import Hero from "../components/FrontPage/Hero"
 
 export const pageQuery = graphql`
 {
@@ -23,7 +24,7 @@ const IndexPage = (props) => {
     <Layout>
       <SEO title={title} />
       <StyledMain>
-        index.js
+        <Hero/>
       </StyledMain>
     </Layout>
   )

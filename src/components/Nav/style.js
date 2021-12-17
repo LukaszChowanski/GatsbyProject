@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
-display: flex;
-align-items: center;
-max-width: 100%;
-background-color: #fff;
-box-shadow: 0 8px 16px #00000029;
-border-radius: 0 0 16px 16px;
-position: relative;
-height: 64px;
-padding: 0 32px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: 0 8px 16px #00000029;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  min-height: 64px;
 `
 
 const MenuListOfElements = styled.ul`
@@ -32,21 +31,25 @@ const MenuListOfElements = styled.ul`
 `
 
 const Button = styled.button`
-background-color: #12bb45;
--webkit-box-shadow: 0px 8px 16px #12bb457f;
-box-shadow: 0px 8px 16px #12bb457f;
-color: #fff;
-font-size: 16px;font: normal normal 400 18px/21px "PT Sans";
-font-size: 18px;
-padding: 4px 16px;
-text-decoration: none;
-border-radius: 4px;
-color: ${({theme}) => theme.colors.paragraphsLight };
-width: -webkit-max-content;
-width: -moz-max-content;
-width: max-content;
-outline: none;
-border: none;
+    background-color: ${({theme}) => theme.colors.btnBgColored};
+    box-shadow: 0px 8px 16px #00000028;
+    color: ${({theme}) => theme.colors.btnLight};
+    font-size: 16px;
+    text-align: center;
+    margin-right: 1rem;
+    max-width: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 8px 16px ${({theme}) => theme.colors.btnBgColoredBs};
+    }
+
+    @media (max-width: 1064px) {
+      max-width: fit-content;
+      justify-self: center;
+      margin-right: 0;
+    }
 `
 
 export { StyledNav, MenuListOfElements, Button}
