@@ -37,17 +37,19 @@ label,
 li {
   font: normal normal 400 20px/23px "PT Sans", sans-serif;
   color: ${paragraphs};
-  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 
   &--small {
     font: normal normal 400 16px/18px "PT Sans", sans-serif;
   }
 }
 
-.h1,
-.h2,
-.h3 {
-  margin-block: 0;
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .bold {
@@ -98,7 +100,8 @@ img {
   label,
   li {
     font: normal normal 400 16px/18px "PT Sans", sans-serif;
-    margin-block: 0;
+    margin-top: 0;
+  margin-bottom: 0;
 
     &--small {
       font: normal normal 400 14px/16px "PT Sans", sans-serif;
