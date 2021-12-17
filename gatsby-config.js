@@ -19,11 +19,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `PT Sans\:400,700`
-        ],
-        display: 'swap'
-      }
+        fonts: [`PT Sans\:400,700`],
+        display: "swap",
+      },
     },
     `gatsby-plugin-react-helmet`,
     {

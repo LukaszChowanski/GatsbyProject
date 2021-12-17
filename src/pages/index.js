@@ -1,37 +1,32 @@
 import React from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 import Hero from "../components/FrontPage/Hero"
+import SimpleSection from "../components/FrontPage/SimpleSection"
 
 export const pageQuery = graphql`
-{
-  wpgraphql {
-    pageBy(uri: "/") {
-      title
+  {
+    wpgraphql {
+      pageBy(uri: "/") {
+        title
+      }
     }
   }
-}
 `
 
-const IndexPage = (props) => {
+const IndexPage = props => {
+  const { title } = props.data.wpgraphql.pageBy
 
-  const {title} = props.data.wpgraphql.pageBy
-
-  return(
+  return (
     <Layout>
       <SEO title={title} />
-      <StyledMain>
-        <Hero/>
-      </StyledMain>
+      <Hero />
+      <SimpleSection />
     </Layout>
   )
 }
 
 export default IndexPage
-
-const StyledMain = styled.main`
-  background: #70707001;
-`
