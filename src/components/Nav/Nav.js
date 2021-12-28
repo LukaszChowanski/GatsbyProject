@@ -51,6 +51,7 @@ const Nav = () => {
     siteTitle = data.site.siteMetadata.title,
     menuItems = data.wpMenu.menuItems.nodes
     return (
+      
         <BootstrapContainer>
             <StyledNav>
               <div> {siteTitle} </div>
