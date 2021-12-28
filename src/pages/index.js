@@ -1,9 +1,8 @@
 import React from "react"
-import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Hero from "../components/FrontPage/Hero"
 import SimpleSection from "../components/FrontPage/SimpleSection"
 
@@ -22,7 +21,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO title={title} />
+      <Seo title={title} />
       <Hero />
       <SimpleSection />
     </Layout>

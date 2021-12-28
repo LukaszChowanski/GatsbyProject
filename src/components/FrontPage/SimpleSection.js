@@ -33,7 +33,7 @@ const StyledSection = styled.section`
 `
 const TheContentArticle = styled.article`
   p {
-    font: normal normal normal 20px/23px PT Sans;
+    font: normal normal normal 20px/23px "PT Sans";
   }
 `
 

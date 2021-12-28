@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 export const pageQuery = graphql`
 {
@@ -22,7 +22,7 @@ const ContactPage = ({data}) => {
     return (
     <Layout>
       Strona kontaktowa
-      <SEO title="Kontakt" />
+      <Seo title="Kontakt" />
       <h1>{title}</h1>
       <section dangerouslySetInnerHTML={{ __html: content}}/>
     </Layout>
