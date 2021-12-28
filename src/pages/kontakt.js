@@ -4,27 +4,13 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout/layout"
 import Seo from "../components/seo"
 
-export const pageQuery = graphql`
-{
-  wpgraphql {
-    pageBy(uri: "/kontakt") {
-      content(format: RENDERED)
-      title
-    }
-  }
-}
-`
-
-const ContactPage = ({data}) => {
-
-    const {title, content} = data.wpgraphql.pageBy
+const ContactPage = () => {
 
     return (
     <Layout>
       Strona kontaktowa
       <Seo title="Kontakt" />
-      <h1>{title}</h1>
-      <section dangerouslySetInnerHTML={{ __html: content}}/>
+      <h1>Kontakt</h1>
     </Layout>
 )}
   

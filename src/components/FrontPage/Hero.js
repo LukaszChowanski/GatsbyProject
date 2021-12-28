@@ -11,7 +11,7 @@ const Hero = () => {
       heroParagraph,
       heroModalbtncontent,
       heroBgimg: { sourceUrl },
-    } = data.wpgraphql.pageBy.homepage.flexibleContent[0]
+    } = data.wpPage.homepage.flexibleContent[0]
 
   console.log(data)
 
@@ -68,24 +68,23 @@ const StyledSection = styled.section`
 `
 
 const flexibleContent = graphql`
-  query HeroQuery {
-    wpgraphql {
-      pageBy(uri: "/") {
-        homepage {
-          flexibleContent {
-            ... on WPGRAPHQL_Page_Homepage_FlexibleContent_Hero {
-              fieldGroupName
-              heroMainheading
-              heroParagraph
-              heroModalbtncontent
-              heroSubheading
-              heroBgimg {
-                sourceUrl
-              }
-            }
+query HeroQuery {
+  wpPage(uri: {eq: "/"}) {
+    homepage {
+      flexibleContent {
+        ... on WpPage_Homepage_FlexibleContent_Hero {
+          heroMainheading
+          heroModalbtncontent
+          heroParagraph
+          heroSubheading
+          heroBgimg {
+              sourceUrl
           }
+          fieldGroupName
         }
       }
     }
   }
+}
+
 `

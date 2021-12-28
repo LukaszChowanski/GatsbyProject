@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Logo`,
+    title: `RS Grupa`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Lukasz Ch`,
   },
   plugins: [
     {
-      resolve: "gatsby-source-graphql",
+      resolve: "gatsby-source-wordpress",
       options: {
         // Arbitrary name for the remote schema Query type
-        typeName: "WPGRAPHQL",
+        // typeName: "WPGRAPHQL",
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "wpgraphql",
+        // fieldName: "wpgraphql",
         // Url to query from
         url: "http://nas.gansa.pl/2021/rsgrupa/graphql",
       },

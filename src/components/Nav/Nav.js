@@ -5,14 +5,35 @@ import { StyledNav, MenuListOfElements, Button} from './style'
 import BootstrapContainer from '../SharedComponents/BootstrapContainer'
 
 
+// const navData = graphql`
+// query MenuQuery {
+//   wpgraphql {
+//     menuItems(where: {location: MAIN_MENU}) {
+//       nodes {
+//         id
+//         path
+//         label
+//       }
+//     }
+//   }
+//   site {
+//     siteMetadata {
+//       title
+//     }
+//   }
+// }
+// `
+
 const navData = graphql`
-query MenuQuery {
-  wpgraphql {
-    menuItems(where: {location: MAIN_MENU}) {
+query MyQuery {
+  wpMenu(locations: {eq: MAIN_MENU}) {
+    menuItems {
       nodes {
         id
+        url
         path
         label
+        databaseId
       }
     }
   }
@@ -22,15 +43,17 @@ query MenuQuery {
     }
   }
 }
+
 `
+
 const Nav = () => {
   const data = useStaticQuery(navData),
     siteTitle = data.site.siteMetadata.title,
-    menuItems = data.wpgraphql.menuItems.nodes
+    menuItems = data.wpMenu.menuItems.nodes
     return (
         <BootstrapContainer>
             <StyledNav>
-              <div> { siteTitle } </div>
+              <div> {siteTitle} </div>
               <MenuListOfElements>
                 {menuItems && menuItems.map( ({path, databaseId, label}) => 
                   <li key={databaseId}><Link to={path}>{label}</Link></li>)}

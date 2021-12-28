@@ -22,6 +22,7 @@
     "gatsby-remark-remove-root-p-tag": "^1.0.1",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-source-graphql": "^4.4.0",
+    "gatsby-source-wordpress": "^6.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
