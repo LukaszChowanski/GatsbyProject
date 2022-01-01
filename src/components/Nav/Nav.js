@@ -36,8 +36,12 @@ const Nav = () => {
           <BootstrapContainer>
                 <div> {siteTitle} </div>
                 <MenuListOfElements>
-                  {menuItems && menuItems.map( ({path, databaseId, label}) => 
-                    <li key={databaseId}><Link to={path}>{label}</Link></li>)}
+                  {menuItems && menuItems.map( ({path, url, databaseId, label}) => {
+                    if(url == "http://nas.gansa.pl/2021/rsgrupa/") {
+                      return <li key={databaseId}><Link to="/">{label}</Link></li>
+                    }
+                    return <li key={databaseId}><Link to={url}>{label}</Link></li>
+                  })}
                 </MenuListOfElements>
                 <Button>Umów się na bezpłatną konsultację</Button>
           </BootstrapContainer>
