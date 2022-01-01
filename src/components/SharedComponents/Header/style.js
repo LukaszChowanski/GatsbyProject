@@ -53,6 +53,4 @@ const ImgContainer = styled.section`
     border-radius: 0 32px 500px 0;
   }
 `
-
-export default Container
-export { ImgContainer }
+export { Container, ImgContainer }

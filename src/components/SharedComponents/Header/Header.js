@@ -1,5 +1,5 @@
 import React from "react"
-import Container, { ImgContainer } from './style'
+import { Container, ImgContainer } from './style'
 import BootstrapContainer from "../BootstrapContainer"
 
 const Header = ({title, background}) => {
