@@ -16,5 +16,5 @@ const FooterContainer = styled.footer`
     width: 100%;
     display: flex;
     justify-content: left;
-    margin-left: 30px;
+    padding-left: 30px;
 `

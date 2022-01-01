@@ -4,26 +4,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { StyledNav, MenuListOfElements, Button} from './style'
 import BootstrapContainer from '../SharedComponents/BootstrapContainer'
 
-
-// const navData = graphql`
-// query MenuQuery {
-//   wpgraphql {
-//     menuItems(where: {location: MAIN_MENU}) {
-//       nodes {
-//         id
-//         path
-//         label
-//       }
-//     }
-//   }
-//   site {
-//     siteMetadata {
-//       title
-//     }
-//   }
-// }
-// `
-
 const navData = graphql`
 query MyQuery {
   wpMenu(locations: {eq: MAIN_MENU}) {
@@ -52,16 +32,16 @@ const Nav = () => {
     menuItems = data.wpMenu.menuItems.nodes
     return (
       
-        <BootstrapContainer>
-            <StyledNav>
-              <div> {siteTitle} </div>
-              <MenuListOfElements>
-                {menuItems && menuItems.map( ({path, databaseId, label}) => 
-                  <li key={databaseId}><Link to={path}>{label}</Link></li>)}
-              </MenuListOfElements>
-              <Button>Umów się na bezpłatną konsultację</Button>
-            </StyledNav>   
-        </BootstrapContainer>
+        <StyledNav>
+          <BootstrapContainer>
+                <div> {siteTitle} </div>
+                <MenuListOfElements>
+                  {menuItems && menuItems.map( ({path, databaseId, label}) => 
+                    <li key={databaseId}><Link to={path}>{label}</Link></li>)}
+                </MenuListOfElements>
+                <Button>Umów się na bezpłatną konsultację</Button>
+          </BootstrapContainer>
+        </StyledNav>   
     )
 }
 

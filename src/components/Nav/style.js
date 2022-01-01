@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
-  display: flex;
-  align-items: center;
   max-width: 100%;
-  background-color: #fff;
-  box-shadow: 0 8px 16px #00000029;
-  border-radius: 0 0 16px 16px;
-  position: relative;
-  min-height: 64px;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  
+  & > div {
+    background-color: #fff;
+    box-shadow: 0 8px 16px #00000029;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding-inline: .5rem;
+  }
 `
 
 const MenuListOfElements = styled.ul`
@@ -36,7 +42,6 @@ const Button = styled.button`
     color: ${({theme}) => theme.colors.btnLight};
     font-size: 16px;
     text-align: center;
-    margin-right: 1rem;
     max-width: 100%;
     transition: all 0.3s;
 
