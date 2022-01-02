@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 // import { GatsbyImage } from "gatsby-plugin-image"
 import parse from 'html-react-parser'
-import styled from 'styled-components'
 
 // We're using Gutenberg so we need the block styles
 // these are copied into this project due to a conflict in the postCSS
@@ -13,10 +12,11 @@ import styled from 'styled-components'
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
 // import Bio from "../components/bio"
-import Layout from '../components/Layout/layout'
-import Seo from '../components/seo'
-import Header from '../components/SharedComponents/Header/Header'
-import BootstrapContainer from '../components/SharedComponents/BootstrapContainer'
+import Layout from '../../components/Layout/layout'
+import Seo from '../../components/seo'
+import Header from '../../components/SharedComponents/Header/Header'
+import BootstrapContainer from '../../components/SharedComponents/BootstrapContainer'
+import { StyledArticle, StyledUl, StyledLink } from './style'
 
 {
   /* <GatsbyImage
@@ -36,7 +36,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     <Layout>
       <Seo title={post.title} description={post.excerpt} />
 
-      <article>
+      <StyledArticle>
         <Header title={post.title} background={featuredImage.sourceUrl} />
 
         <BootstrapContainer>
@@ -44,35 +44,27 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             <section itemProp="articleBody">{parse(post.content)}</section>
           )}
         </BootstrapContainer>
-      </article>
+      </StyledArticle>
 
       <nav className="blog-post-nav">
         <BootstrapContainer>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0
-            }}
-          >
-            <li style={{ maxWidth: '35%', overflow: 'hidden' }}>
+          <StyledUl>
+            <li>
               {previous && (
                 <StyledLink to={previous.uri} rel="prev">
-                  ← {parse(previous.title)}
+                  <span>← {parse(previous.title)}</span>
                 </StyledLink>
               )}
             </li>
 
-            <li style={{ maxWidth: '35%', overflow: 'hidden' }}>
+            <li>
               {next && (
                 <StyledLink to={next.uri} rel="next">
                   <span>{parse(next.title)} →</span>
                 </StyledLink>
               )}
             </li>
-          </ul>
+          </StyledUl>
         </BootstrapContainer>
       </nav>
     </Layout>
@@ -80,21 +72,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 }
 
 export default BlogPostTemplate
-
-const StyledLink = styled(Link)`
-  color: #707070;
-  box-shadow: 0 8px 16px #00000028;
-  max-height: 30px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  span {
-    max-width: 38ch;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-`
 
 export const pageQuery = graphql`
   query BlogPostById(
