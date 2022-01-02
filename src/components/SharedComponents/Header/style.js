@@ -16,6 +16,7 @@ const Container = styled.header`
     z-index: 3;
   }
   h1 {
+    font-size: 48px;
     margin-bottom: 2rem;
     color: #fff;
   }
@@ -51,6 +52,7 @@ const ImgContainer = styled.section`
     width: calc(100% - 5rem);
     height: 230px;
     border-radius: 0 32px 500px 0;
+    object-fit: cover;
   }
 `
 export { Container, ImgContainer }

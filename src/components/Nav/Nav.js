@@ -37,7 +37,7 @@ const Nav = () => {
                 <div> {siteTitle} </div>
                 <MenuListOfElements>
                   {menuItems && menuItems.map( ({path, url, databaseId, label}) => {
-                    if(url == "http://nas.gansa.pl/2021/rsgrupa/") {
+                    if(url === "http://nas.gansa.pl/2021/rsgrupa/") {
                       return <li key={databaseId}><Link to="/">{label}</Link></li>
                     }
                     return <li key={databaseId}><Link to={url}>{label}</Link></li>
