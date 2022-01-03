@@ -39,14 +39,12 @@ const BlogIndex = ({
               sourceUrl = post.featuredImage.node.sourceUrl,
               img = getImage(post.featuredImage.node.localFile)
 
-            console.log(img)
-
             return (
               <li key={post.uri}>
                 <GatsbyImage image={img} alt="zdjęcie" />
                 {/* <img src={sourceUrl} alt="" /> */}
                 <h2>{parse(title)}</h2>
-                <p>{parse(post.excerpt)}</p>
+                {parse(post.excerpt)}
                 <StyledLink to={uri} aria-label="czytaj więcej">
                   Czytaj więcej
                 </StyledLink>

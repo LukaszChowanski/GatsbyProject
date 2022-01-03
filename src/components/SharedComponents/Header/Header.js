@@ -9,12 +9,14 @@ const Header = ({ title, gatsbyImage }) => {
   return (
     <Container>
       <ImgContainer>
-        {/* <StaticImage
-          src="./hero_bg_optimized.jpg"
-          alt="zdjęcie"
-          layout="fullWidth"
-        /> */}
-        <GatsbyImage image={gatsbyImage} alt="" />
+        {!gatsbyImage && (
+          <StaticImage
+            src="./hero_bg_optimized.jpg"
+            alt="zdjęcie"
+            layout="fullWidth"
+          />
+        )}
+        {gatsbyImage && <GatsbyImage image={gatsbyImage} alt="" />}
         {/* <img src={background} alt="zdjęcie" /> */}
       </ImgContainer>
       <BootstrapContainer>
