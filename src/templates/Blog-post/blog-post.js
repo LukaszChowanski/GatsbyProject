@@ -17,7 +17,7 @@ import Seo from '../../components/seo'
 import Header from '../../components/SharedComponents/Header/Header'
 import BootstrapContainer from '../../components/SharedComponents/BootstrapContainer'
 import { StyledArticle, StyledUl, StyledLink } from './style'
-
+import { getImage } from 'gatsby-plugin-image'
 {
   /* <GatsbyImage
   image={featuredImage.data}
@@ -31,13 +31,18 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     sourceUrl: post.featuredImage?.node?.sourceUrl,
     alt: post.featuredImage?.node?.alt || ``
   }
+  const image = getImage(post.featuredImage.node.localFile)
 
   return (
     <Layout>
       <Seo title={post.title} description={post.excerpt} />
 
       <StyledArticle>
-        <Header title={post.title} background={featuredImage.sourceUrl} />
+        <Header
+          title={post.title}
+          background={featuredImage.sourceUrl}
+          gatsbyImage={image}
+        />
 
         <BootstrapContainer>
           {!!post.content && (
@@ -92,9 +97,9 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                quality: 100
-                placeholder: TRACED_SVG
-                layout: FULL_WIDTH
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                transformOptions: { fit: COVER }
               )
             }
           }
