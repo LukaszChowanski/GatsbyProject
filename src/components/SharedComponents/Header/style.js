@@ -1,18 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Container = styled.header`
   margin-bottom: 3rem;
   display: grid;
-  
-  & > * {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-  }
-  
+  position: relative;
+
   & > div {
-    display: flex;
-    align-items: flex-end;
-    position: relative;
+    padding-top: 100px;
     z-index: 3;
   }
   h1 {
@@ -23,36 +17,36 @@ const Container = styled.header`
 `
 
 const ImgContainer = styled.section`
-  width: 100%;
+  width: calc(100% - 5rem);
   height: 100%;
-  position: relative;
+  position: absolute;
+
   &::before {
     content: '';
     position: absolute;
     inset: 0;
+    width: calc(100% + 5rem);
     background-color: #f8f8f8;
     border-radius: 0 32px 500px 0;
     z-index: 0;
   }
-  
+
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0%;
     z-index: 2;
-    width: calc(100% - 5rem);
+    width: 100%;
     height: 100%;
     background-color: #707070a1;
     border-radius: 0 32px 500px 0;
   }
 
-  img {
-    position: relative;
-    width: calc(100% - 5rem);
-    height: 230px;
-    border-radius: 0 32px 500px 0;
-    object-fit: cover;
+  .gatsby-image-wrapper {
+    max-height: 100%;
+    height: 100%;
+    border-radius: 32px 32px 500px 32px;
   }
 `
 export { Container, ImgContainer }

@@ -1,17 +1,18 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import parse from "html-react-parser"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import parse from 'html-react-parser'
 
-import Layout from "../../components/Layout/layout"
-import Seo from "../../components/seo"
-import BootstrapContainer from "../../components/SharedComponents/BootstrapContainer"
+import Layout from '../../components/Layout/layout'
+import Seo from '../../components/seo'
+import BootstrapContainer from '../../components/SharedComponents/BootstrapContainer'
 import BgImg from '../../images/hero_bg_optimized.jpg'
-import { StyledLink, StyledOl} from './style'
-import Header from "../../components/SharedComponents/Header/Header"
+import { StyledLink, StyledOl } from './style'
+import Header from '../../components/SharedComponents/Header/Header'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const BlogIndex = ({
   data,
-  pageContext: { nextPagePath, previousPagePath },
+  pageContext: { nextPagePath, previousPagePath }
 }) => {
   const posts = data.allWpPost.nodes
 
@@ -30,19 +31,25 @@ const BlogIndex = ({
   return (
     <Layout>
       <Seo title="Blog post archive" />
-      <Header title="Blog" background={BgImg}/>
+      <Header title="Blog" background={BgImg} />
       <BootstrapContainer>
         <StyledOl>
           {posts.map(post => {
-            const {title, uri} = post,
-            sourceUrl = post.featuredImage.node.sourceUrl
+            const { title, uri } = post,
+              sourceUrl = post.featuredImage.node.sourceUrl,
+              img = getImage(post.featuredImage.node.localFile)
+
+            console.log(img)
 
             return (
               <li key={post.uri}>
-                    <img src={sourceUrl} alt="" />
-                    <h2>{parse(title)}</h2>
-                    <p>{parse(post.excerpt)}</p>
-                    <StyledLink to={uri} aria-label="czytaj więcej">Czytaj więcej</StyledLink>
+                <GatsbyImage image={img} alt="zdjęcie" />
+                {/* <img src={sourceUrl} alt="" /> */}
+                <h2>{parse(title)}</h2>
+                <p>{parse(post.excerpt)}</p>
+                <StyledLink to={uri} aria-label="czytaj więcej">
+                  Czytaj więcej
+                </StyledLink>
               </li>
             )
           })}
@@ -76,10 +83,15 @@ export const pageQuery = graphql`
         excerpt
         featuredImage {
           node {
-            title
-            uri
-            id
-            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  transformOptions: { fit: COVER }
+                )
+              }
+            }
           }
         }
       }
