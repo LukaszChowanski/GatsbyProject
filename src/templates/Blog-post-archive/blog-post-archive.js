@@ -41,7 +41,12 @@ const BlogIndex = ({
 
             return (
               <li key={post.uri}>
-                <GatsbyImage image={img} alt="zdjęcie" />
+                <GatsbyImage
+                  image={img}
+                  alt="zdjęcie"
+                  width="384"
+                  height="230"
+                />
                 {/* <img src={sourceUrl} alt="" /> */}
                 <h2>{parse(title)}</h2>
                 {parse(post.excerpt)}

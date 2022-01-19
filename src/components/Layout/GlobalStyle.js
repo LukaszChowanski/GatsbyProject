@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from './theme'
 
-const { headings, paragraphs, btnLight} = theme.colors
+const { headings, paragraphs, btnLight } = theme.colors
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -78,7 +78,7 @@ img {
   border-radius: 32px;
 }
 
-@include breakpoint(small) {
+@media (max-width: 768px) {
   h1,
   .h1 {
     font: normal normal 700 55px/55px "PT Sans", sans-serif;
