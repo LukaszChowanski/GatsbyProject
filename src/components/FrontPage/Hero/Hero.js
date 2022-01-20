@@ -59,7 +59,7 @@ const flexibleContent = graphql`
                 childImageSharp {
                   gatsbyImageData(
                     placeholder: BLURRED
-                    formats: AVIF
+                    formats: [AUTO, WEBP, AVIF]
                     transformOptions: { fit: COVER }
                   )
                 }

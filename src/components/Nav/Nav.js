@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import { StyledNav, MenuListOfElements, Button } from './style'
+import { StyledNav, MenuListOfElements, Button, Burger } from './style'
 import BootstrapContainer from '../SharedComponents/BootstrapContainer'
 
 const navData = graphql`
-  query MyQuery {
+  query MenuQuery {
     wpMenu(locations: { eq: MAIN_MENU }) {
       menuItems {
         nodes {
@@ -29,11 +29,18 @@ const Nav = () => {
   const data = useStaticQuery(navData),
     siteTitle = data.site.siteMetadata.title,
     menuItems = data.wpMenu.menuItems.nodes
+
+  const [isHidden, setIsHidden] = useState(true)
+
+  const handleBurgerClick = () => {
+    setIsHidden(!isHidden)
+  }
+
   return (
     <StyledNav>
       <BootstrapContainer>
         <div> {siteTitle} </div>
-        <MenuListOfElements>
+        <MenuListOfElements mobile={isHidden}>
           {menuItems &&
             menuItems.map(({ url, databaseId, label }) => {
               if (url === 'http://nas.gansa.pl/2021/rsgrupa/') {
@@ -51,6 +58,7 @@ const Nav = () => {
             })}
         </MenuListOfElements>
         <Button>Umów się na bezpłatną konsultację</Button>
+        <Burger onClick={handleBurgerClick} aria-label="main menu toggle" />
       </BootstrapContainer>
     </StyledNav>
   )
