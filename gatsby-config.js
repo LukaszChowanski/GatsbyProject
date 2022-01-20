@@ -5,6 +5,7 @@ module.exports = {
     author: `Lukasz Ch`
   },
   plugins: [
+    `gatsby-plugin-no-index`,
     {
       resolve: 'gatsby-source-wordpress',
       options: {
