@@ -1,26 +1,37 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Layout from '../components/Layout/layout'
-import Seo from '../components/seo'
-import Hero from '../components/FrontPage/Hero/Hero'
-import SimpleSection from '../components/FrontPage/SimpleSection'
-import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent/HomeFlexibleContent'
-import styled from 'styled-components'
+const HomeFlexibleContent = () => {
+  const data = useStaticQuery(dataToFetch)
 
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    wpPage(slug: { eq: "/" }) {
-      id
+  const { flexibleContent } = data.wpPage.homepage
+
+  console.log(flexibleContent)
+  return (
+    <>
+      {flexibleContent.map(item => {
+        switch (item.fieldGroupName) {
+          case 'page_Homepage_FlexibleContent_Simplesection':
+            return <p>"page_Homepage_FlexibleContent_Simplesection"</p>
+          case 'page_Homepage_FlexibleContent_Hero':
+            return <p>Hero</p>
+        }
+      })}
+    </>
+  )
+}
+
+const dataToFetch = graphql`
+  query FlexibleHome {
+    wpPage(uri: { eq: "/" }) {
       homepage {
         flexibleContent {
           ... on WpPage_Homepage_FlexibleContent_Hero {
+            heroSubheading
+            heroParagraph
             heroModalbtncontent
+            heroMainheading
+            fieldGroupName
           }
           ... on WpPage_Homepage_FlexibleContent_Simplesection {
             fieldGroupName
@@ -49,30 +60,8 @@ export const pageQuery = graphql`
           }
         }
       }
-      featuredImageId
     }
   }
 `
 
-const IndexPage = props => {
-  const { title } = props.data.site.siteMetadata
-  const myRef = useRef(null)
-
-  return (
-    <Layout>
-      <Seo title={title} />
-      <Hero element={myRef} />
-      <SimpleSection ref={myRef} />
-      <HomeFlexibleContent />
-      <Article />
-      <Article />
-      <Article />
-    </Layout>
-  )
-}
-
-export default IndexPage
-
-const Article = styled.article`
-  height: 100vh;
-`
+export default HomeFlexibleContent

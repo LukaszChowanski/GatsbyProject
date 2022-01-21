@@ -9,8 +9,6 @@ const SimpleSection = React.forwardRef((props, ref) => {
     { simplesectionHeading, simplesectionParagraph } =
       data.wpPage.homepage.flexibleContent[1]
 
-  console.log(data)
-
   return (
     <StyledSection ref={ref}>
       <BootstrapContainer>
