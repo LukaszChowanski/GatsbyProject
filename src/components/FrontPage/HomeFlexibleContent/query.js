@@ -1,30 +1,4 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-
-import Hero from '../Hero/Hero'
-import SimpleSection from '../SimpleSection'
-
-const HomeFlexibleContent = () => {
-  const data = useStaticQuery(dataToFetch)
-
-  const { flexibleContent } = data.wpPage.homepage
-
-  console.log(flexibleContent)
-  return (
-    <>
-      {flexibleContent.map((item, index) => {
-        switch (item.fieldGroupName) {
-          case 'page_Homepage_FlexibleContent_Simplesection':
-            return <SimpleSection key={index} {...item} />
-          case 'page_Homepage_FlexibleContent_Hero':
-            return <Hero key={index} {...item} />
-        }
-      })}
-    </>
-  )
-}
-
-export default HomeFlexibleContent
+import { graphql } from 'gatsby'
 
 const dataToFetch = graphql`
   query FlexibleHome {
@@ -54,22 +28,6 @@ const dataToFetch = graphql`
             fieldGroupName
             simplesectionHeading
             simplesectionParagraph
-            simplesectionLink {
-              target
-              title
-              url
-            }
-            simplesectionBgimg {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    transformOptions: { fit: COVER }
-                  )
-                }
-              }
-            }
           }
           ... on WpPage_Homepage_FlexibleContent_Whatdoyougain {
             fieldGroupName
@@ -97,3 +55,4 @@ const dataToFetch = graphql`
     }
   }
 `
+export default dataToFetch

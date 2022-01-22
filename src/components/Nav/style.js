@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
     padding-inline: 0.5rem;
     position: relative;
 
-    @media (max-width: 550px) {
+    @media (max-width: 767px) {
       display: grid;
       grid-template-columns: 70px 1fr 32px;
     }
@@ -76,6 +76,7 @@ const Button = styled.button`
   text-align: center;
   max-width: 100%;
   transition: all 0.3s;
+  margin-block: 8px;
 
   &:hover {
     transform: scale(1.1);
@@ -94,6 +95,12 @@ const Burger = styled.button`
   height: 29px;
   background: url(${bgc});
   background-size: cover;
+
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
 `
 
 export { StyledNav, MenuListOfElements, Button, Burger }
