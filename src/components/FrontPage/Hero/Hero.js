@@ -12,7 +12,6 @@ const Hero = ({
   heroBgimg: { localFile }
 }) => {
   const img = getImage(localFile)
-
   // const [refEl, setRelEl] = useState(element)
 
   // useEffect(() => {

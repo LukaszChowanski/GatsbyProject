@@ -2,8 +2,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { memo } from 'react'
 import styled, { css } from 'styled-components'
 
-import BootstrapContainer from '../SharedComponents/BootstrapContainer'
-import StyledLink from '../SharedComponents/StyledLink'
+import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
+import StyledLink from '../../SharedComponents/StyledLink'
 
 const SimpleSection = ({
   simplesectionHeading,
@@ -19,7 +19,7 @@ const SimpleSection = ({
       <BootstrapContainer>
         <Background>
           {simplesectionBgimg?.localFile ? (
-            <ImageContainer image={img} />
+            <ImageContainer image={img} alt="zdjecie" />
           ) : (
             <PlaceholderBackground />
           )}
@@ -51,7 +51,6 @@ const StyledSection = styled.section`
 const ImageContainer = styled(GatsbyImage)`
   position: absolute;
   inset: 0;
-  z-index: 2;
   background-color: #f8f8f8;
   border-radius: 32px 32px 500px 32px;
   width: calc(100% - 5rem);
@@ -62,12 +61,25 @@ const ImageContainer = styled(GatsbyImage)`
     inset: 0;
     border-radius: 32px 32px 500px 32px;
     background-color: #70707080;
-    z-index: 3;
+    z-index: 1;
+  }
+
+  img {
+    border-radius: 32px 32px 500px 32px;
+
+    @media (max-width: 767px) {
+      width: calc(100% - 1rem);
+      border-radius: 32px 32px 150px 32px;
+    }
   }
 
   @media (max-width: 767px) {
     width: calc(100% - 1rem);
     border-radius: 32px 32px 150px 32px;
+
+    &::before {
+      border-radius: 32px 32px 150px 32px;
+    }
   }
 `
 

@@ -2,14 +2,15 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Hero from '../Hero/Hero'
-import SimpleSection from '../SimpleSection'
+import SimpleSection from '../SimpleSection/SimpleSection'
+import WhatDoYouGain from '../WhatDoYouGain/WhatDoYouGain'
+import TimeLine from '../TimeLine/TimeLine'
 
 const HomeFlexibleContent = () => {
   const data = useStaticQuery(dataToFetch)
 
   const { flexibleContent } = data.wpPage.homepage
-
-  console.log(flexibleContent)
+  // console.log(flexibleContent)
   return (
     <>
       {flexibleContent.map((item, index) => {
@@ -18,6 +19,16 @@ const HomeFlexibleContent = () => {
             return <SimpleSection key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Hero':
             return <Hero key={index} {...item} />
+          case 'page_Homepage_FlexibleContent_Whatdoyougain':
+            return <WhatDoYouGain key={index} {...item} />
+          case 'page_Homepage_FlexibleContent_Timeline':
+            return <TimeLine key={index} {...item} />
+          case 'page_Homepage_FlexibleContent_Blogposts':
+            return <p key={index}>Blog Posts</p>
+          case 'page_Homepage_FlexibleContent_Reviews':
+            return <p key={index}>Reviews</p>
+          case 'page_Homepage_FlexibleContent_Accordion':
+            return <p key={index}>Akordeonik</p>
         }
       })}
     </>
@@ -39,11 +50,7 @@ const dataToFetch = graphql`
             heroBgimg {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    transformOptions: { fit: COVER }
-                  )
+                  gatsbyImageData(transformOptions: { fit: COVER })
                 }
               }
               sourceUrl
@@ -62,11 +69,7 @@ const dataToFetch = graphql`
             simplesectionBgimg {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    transformOptions: { fit: COVER }
-                  )
+                  gatsbyImageData(transformOptions: { fit: COVER })
                 }
               }
             }
@@ -74,10 +77,29 @@ const dataToFetch = graphql`
           ... on WpPage_Homepage_FlexibleContent_Whatdoyougain {
             fieldGroupName
             whatdoyougainBtntext
+            whatdoyougainHeading
+            whatdoyougainParagraph
+            whatdoyougainImg {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(transformOptions: { fit: COVER })
+                }
+              }
+            }
           }
           ... on WpPage_Homepage_FlexibleContent_Timeline {
             fieldGroupName
+            fieldGroupName
             timelineHeading
+            timelineParagraph
+            timelineModaltext
+            timelineRepeater {
+              timelineIcon {
+                sourceUrl
+              }
+              timelineSubheading
+              timelineSubparagraph
+            }
           }
           ... on WpPage_Homepage_FlexibleContent_Blogposts {
             fieldGroupName

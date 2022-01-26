@@ -1,7 +1,12 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
 
-const GreenButton = ({ children, onClick }) => {
+type IProps = {
+  children: React.ReactNode,
+  onClick: () => void
+}
+
+const GreenButton = ({ children, onClick }: IProps) => {
   return <StyledButton onClick={onClick}>{children}</StyledButton>
 }
 

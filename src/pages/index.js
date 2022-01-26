@@ -3,8 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/layout'
 import Seo from '../components/seo'
-// import Hero from '../components/FrontPage/Hero/Hero'
-import SimpleSection from '../components/FrontPage/SimpleSection'
 import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent/HomeFlexibleContent'
 import styled from 'styled-components'
 
@@ -15,19 +13,13 @@ const IndexPage = props => {
   return (
     <Layout>
       <Seo title={title} />
-      {/* <Hero element={myRef} /> */}
-      {/* <SimpleSection ref={myRef} /> */}
       <HomeFlexibleContent />
-      <Article />
     </Layout>
   )
 }
 
 export default IndexPage
 
-const Article = styled.article`
-  height: 100vh;
-`
 export const pageQuery = graphql`
   {
     site {
