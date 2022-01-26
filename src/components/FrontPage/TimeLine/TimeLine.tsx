@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 import background from '../../../images/background.jpg'
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
@@ -29,7 +30,11 @@ const TimeLine = ({
 }: IProps): JSX.Element => {
   return (
     <Container>
-      <Background src={background} />
+      <StaticImage
+        src="../../../images/background.jpg"
+        alt="background"
+        placeholder="blurred"
+      />
       <Content>
         <H2Wrapper>
           <h2>{timelineHeading}</h2>
@@ -62,14 +67,13 @@ export default TimeLine
 const Container = styled(BootstrapContainer)`
   display: grid;
   margin-top: 4rem;
-`
-const Background = styled.img`
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+
+  .gatsby-image-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    height: 100%;
+    width: 100%;
+  }
 `
 
 const Content = styled.div`
@@ -78,6 +82,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 4rem 4rem 2rem 6rem;
+  position: relative;
 
   & > p {
     max-width: 75%;
