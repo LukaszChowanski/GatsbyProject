@@ -27,7 +27,7 @@ const ImageContainer = styled(GatsbyImage)`
 
   @media (max-width: 787px) {
     width: calc(100% - 1rem);
-    border-radius: 0 32px 150px 0;
+    border-radius: 0 32px 64px 0;
   }
 `
 
@@ -86,11 +86,11 @@ const StyledSection = styled.section`
     }
 
     &::before {
-      border-radius: 0 32px 150px 0;
+      border-radius: 0 32px 64px 0;
     }
 
     &::after {
-      border-radius: 0 32px 150px 0;
+      border-radius: 0 32px 64px 0;
       width: calc(100% - 1rem);
     }
   }
