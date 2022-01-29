@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from './theme'
 
-const { headings, paragraphs, btnLight } = theme.colors
+const { c_headings, c_paragraphs, c_btnLight } = theme
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -15,19 +15,19 @@ const GlobalStyle = createGlobalStyle`
   h1,
 .h1 {
   font: normal normal 700 64px/64px "PT Sans", sans-serif;
-  color: ${headings};
+  color: ${c_headings};
 }
 
 h2,
 .h2 {
   font: normal normal 700 32px/32px "PT Sans", sans-serif;
-  color: ${headings};
+  color: ${c_headings};
 }
 
 h3,
 .h3 {
   font: normal normal 700 28px/28px "PT Sans", sans-serif;
-  color: ${headings};
+  color: ${c_headings};
 }
 
 p,
@@ -36,7 +36,7 @@ span,
 label,
 li {
   font: normal normal 400 20px/23px "PT Sans", sans-serif;
-  color: ${paragraphs};
+  color: ${c_paragraphs};
   margin-top: 0;
   margin-bottom: 0;
 
@@ -62,7 +62,7 @@ a {
   padding: 4px 16px;
   text-decoration: none;
   border-radius: 4px;
-  color: ${btnLight};
+  color: ${c_btnLight};
   width: max-content;
   outline: none;
   border: none;

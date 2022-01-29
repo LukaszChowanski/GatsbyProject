@@ -25,7 +25,7 @@ const ImageContainer = styled(GatsbyImage)`
     border-radius: 0;
   }
 
-  @media (max-width: 787px) {
+  ${({ theme }) => theme.b_small} {
     width: calc(100% - 1rem);
     border-radius: 0 32px 64px 0;
   }
@@ -38,7 +38,7 @@ const StyledSection = styled.section`
   & h1,
   h2,
   p {
-    color: ${({ theme }) => theme.colors.headingsLight};
+    color: ${({ theme }) => theme.c_headingsLight};
     max-width: calc(100% - 2rem);
   }
 
@@ -50,7 +50,7 @@ const StyledSection = styled.section`
   &::before {
     content: ' ';
     position: absolute;
-    background-color: #f8f8f8;
+    background-color: ${({ theme }) => theme.c_bg400};
     top: 0;
     left: 0;
     width: 100%;
@@ -80,7 +80,7 @@ const StyledSection = styled.section`
     border-radius: 0 32px 500px 0; */
   }
 
-  @media (max-width: 787px) {
+  ${({ theme }) => theme.b_small} {
     h1 {
       text-align: center;
     }

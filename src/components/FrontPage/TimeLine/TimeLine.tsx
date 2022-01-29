@@ -2,7 +2,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
-import background from '../../../images/background.jpg'
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
 
 type Image = {
@@ -113,7 +112,7 @@ const H2Wrapper = styled.div`
     left: 0;
     width: calc(100% - 6rem);
     height: 100%;
-    background-color: #f8f8f8;
+    background-color: ${({ theme }) => theme.c_bg400};
     border-radius: 32px 32px 500px 32px;
     z-index: 1;
   }
@@ -125,7 +124,7 @@ const H2Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f8f8f891;
+    background-color: ${({theme}) => theme.c_bg500};
     border-radius: 32px 32px 500px 32px;
     z-index: 0;
   }
@@ -145,9 +144,9 @@ const H2Wrapper = styled.div`
       transform: translateY(0.8rem);
       width: min(64px, 100%);
       height: 2px;
-      background-color: #b70000;
-      -webkit-box-shadow: 0px 3px 6px #b7000080;
-      box-shadow: 0px 3px 6px #b7000080;
+      background-color: ${({theme}) => theme.c_decoration};
+      -webkit-box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
+      box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
     }
   }
 `
@@ -171,8 +170,8 @@ const Grid = styled.ul`
     height: 90%;
     top: 0;
     left: 50%;
-    background-color: #b70000;
-    box-shadow: 0px 3px 6px #b7000080;
+    background-color: ${({theme}) => theme.c_decoration};
+    box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
     transform: translateX(-50%);
   }
 
@@ -234,15 +233,15 @@ const SubHeading = styled.h3<{ icon: string }>`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #b70000;
+    background-color: ${({theme}) => theme.c_decoration};
     position: absolute;
     top: calc(50% - 8px);
     right: calc(-5rem - 8px);
-    -webkit-box-shadow: 0px 3px 6px #b7000080;
-    box-shadow: 0px 3px 6px #b7000080;
+    -webkit-box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
+    box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
   }
 
-  @media (max-width: 1064px) {
+  ${({theme}) => theme.b_medium} {
     &::after {
       left: -40px;
       right: unset;

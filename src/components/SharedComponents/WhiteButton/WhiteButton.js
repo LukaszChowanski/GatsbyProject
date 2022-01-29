@@ -6,31 +6,14 @@ const WhiteButton = ({ children, onClick }) => {
 }
 
 const StyledButton = styled.button`
-  background-color: ${({
-    theme: {
-      colors: { btnBg }
-    }
-  }) => btnBg ?? '#fff'};
-  box-shadow: 0 8px 16px
-    ${({
-      theme: {
-        colors: { btnBgBs }
-      }
-    }) => btnBgBs ?? '#fff'};
-  color: ${({
-    theme: {
-      colors: { btns }
-    }
-  }) => btns ?? '#fff'};
+  background-color: ${({ theme: { c_btnBg } }) => c_btnBg ?? '#fff'};
+  box-shadow: 0 8px 16px ${({ theme: { c_btnBgBs } }) => c_btnBgBs ?? '#fff'};
+  color: ${({ theme: { c_btnBg } }) => c_btnBg ?? '#fff'};
   transition: all 0.3s;
 
   &:hover {
     box-shadow: 0 8px 16px
-      ${({
-        theme: {
-          colors: { btnBgColoredBs }
-        }
-      }) => btnBgColoredBs ?? '#fff'};
+      ${({ theme: { c_btnBgColoredBs } }) => c_btnBgColoredBs ?? '#fff'};
   }
 `
 

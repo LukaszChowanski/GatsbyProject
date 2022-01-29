@@ -51,7 +51,7 @@ const StyledSection = styled.section`
 const ImageContainer = styled(GatsbyImage)`
   position: absolute;
   inset: 0;
-  background-color: #f8f8f8;
+  background-color: ${({ theme }) => theme.c_bg400};
   border-radius: 32px 32px 500px 32px;
   width: calc(100% - 5rem);
 
@@ -67,13 +67,13 @@ const ImageContainer = styled(GatsbyImage)`
   img {
     border-radius: 32px 32px 500px 32px;
 
-    @media (max-width: 767px) {
+    ${({ theme }) => theme.b_small} {
       width: calc(100% - 1rem);
       border-radius: 32px 32px 150px 32px;
     }
   }
 
-  @media (max-width: 767px) {
+  ${({ theme }) => theme.b_small} {
     width: calc(100% - 1rem);
     border-radius: 32px 32px 150px 32px;
 
@@ -87,11 +87,11 @@ const PlaceholderBackground = styled.div`
   position: absolute;
   inset: 0;
   z-index: 2;
-  background-color: #f8f8f8;
+  background-color: ${({ theme }) => theme.c_bg400};
   border-radius: 32px 32px 500px 32px;
   width: calc(100% - 5rem);
 
-  @media (max-width: 767px) {
+  ${({ theme }) => theme.b_small} {
     width: calc(100% - 1rem);
     border-radius: 32px 32px 150px 32px;
   }
@@ -102,10 +102,10 @@ const Background = styled.div`
   inset: 0;
   z-index: 1;
   width: 100%;
-  background-color: #f8f8f880;
+  background-color: ${({ theme }) => theme.c_bg600};
   border-radius: 32px 32px 500px 32px;
 
-  @media (max-width: 767px) {
+  ${({ theme }) => theme.b_small} {
     border-radius: 32px 32px 150px 32px;
   }
 `
@@ -119,7 +119,7 @@ const Content = styled.article`
   z-index: 4;
   gap: 1rem;
 
-  @media (max-width: 767px) {
+  ${({ theme }) => theme.b_small} {
     width: calc(100% - 2rem);
   }
 
@@ -128,7 +128,7 @@ const Content = styled.article`
     css`
       h2,
       p {
-        color: #fff;
+        color: ${({ theme }) => theme.c_headingsLight};
       }
     `}
 
@@ -143,8 +143,8 @@ const Content = styled.article`
       left: 0;
       height: 2px;
       width: min(64px, 100%);
-      background-color: #b70000;
-      box-shadow: 0px 3px 6px #b7000080;
+      background-color: ${({ theme }) => theme.c_decoration};
+      box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
     }
   }
   p {

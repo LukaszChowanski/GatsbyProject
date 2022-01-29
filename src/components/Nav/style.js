@@ -36,7 +36,7 @@ const MenuListOfElements = styled.ul`
 
   & a {
     font: normal normal 400 18px/21px 'PT Sans';
-    color: ${props => props.theme.colors.paragraphs};
+    color: ${props => props.theme.c_paragraphs};
     padding: 0.6em 1em 0.4em;
     line-height: 1;
     text-decoration: none;
@@ -69,9 +69,9 @@ const MenuListOfElements = styled.ul`
 `
 
 const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.btnBgColored};
+  background-color: ${({ theme }) => theme.c_btnBgColored};
   box-shadow: 0px 8px 16px #00000028;
-  color: ${({ theme }) => theme.colors.btnLight};
+  color: ${({ theme }) => theme.c_btnLight};
   font-size: 16px;
   text-align: center;
   max-width: 100%;
@@ -80,7 +80,7 @@ const Button = styled.button`
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0px 8px 16px ${({ theme }) => theme.colors.btnBgColoredBs};
+    box-shadow: 0px 8px 16px ${({ theme }) => theme.c_btnBgColoredBs};
   }
 
   @media (max-width: 1064px) {
