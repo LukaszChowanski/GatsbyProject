@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
 import Seo from '../components/seo'
 import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent/HomeFlexibleContent'
-import styled from 'styled-components'
 
 const IndexPage = props => {
   const { title } = props.data.site.siteMetadata

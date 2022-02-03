@@ -8,7 +8,7 @@ const WhiteButton = ({ children, onClick }) => {
 const StyledButton = styled.button`
   background-color: ${({ theme: { c_btnBg } }) => c_btnBg ?? '#fff'};
   box-shadow: 0 8px 16px ${({ theme: { c_btnBgBs } }) => c_btnBgBs ?? '#fff'};
-  color: ${({ theme: { c_btnBg } }) => c_btnBg ?? '#fff'};
+  color: ${({ theme: { c_btns } }) => c_btns ?? '#707070a1'};
   transition: all 0.3s;
 
   &:hover {

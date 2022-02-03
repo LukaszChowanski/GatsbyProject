@@ -5,6 +5,9 @@ import Hero from '../Hero/Hero'
 import SimpleSection from '../SimpleSection/SimpleSection'
 import WhatDoYouGain from '../WhatDoYouGain/WhatDoYouGain'
 import TimeLine from '../TimeLine/TimeLine'
+import Reviews from '../Reviews/Reviews'
+import BlogPosts from '../BlogPosts/BlogPosts'
+import Accordion from '../Accordion/Accordion'
 
 const HomeFlexibleContent = () => {
   const data = useStaticQuery(dataToFetch)
@@ -24,11 +27,11 @@ const HomeFlexibleContent = () => {
           case 'page_Homepage_FlexibleContent_Timeline':
             return <TimeLine key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Blogposts':
-            return <p key={index}>Blog Posts</p>
+            return <BlogPosts key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Reviews':
-            return <p key={index}>Reviews</p>
+            return <Reviews key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Accordion':
-            return <p key={index}>Akordeonik</p>
+            return <Accordion key={index} qaArray={item.accordionList} />
         }
       })}
     </>
@@ -103,12 +106,49 @@ const dataToFetch = graphql`
           }
           ... on WpPage_Homepage_FlexibleContent_Blogposts {
             fieldGroupName
+            blogpostsPostlist {
+              ... on WpPost {
+                id
+                slug
+                featuredImage {
+                  node {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(formats: WEBP, placeholder: BLURRED)
+                      }
+                    }
+                  }
+                }
+                excerpt
+                title
+                uri
+              }
+            }
           }
           ... on WpPage_Homepage_FlexibleContent_Reviews {
             fieldGroupName
+            reviewsLink {
+              target
+              title
+              url
+            }
+            reviewsList {
+              ... on WpOpinia {
+                title
+                content
+                id
+              }
+            }
           }
           ... on WpPage_Homepage_FlexibleContent_Accordion {
             fieldGroupName
+            ... on WpPage_Homepage_FlexibleContent_Accordion {
+              fieldGroupName
+              accordionList {
+                accordionAnswer
+                accordionQuestion
+              }
+            }
           }
           ... on WpPage_Homepage_FlexibleContent_Appointment {
             appointementShortcode

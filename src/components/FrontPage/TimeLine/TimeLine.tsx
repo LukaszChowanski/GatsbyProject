@@ -40,9 +40,9 @@ const TimeLine = ({
         </H2Wrapper>
         <Grid>
           {timelineRepeater.map(
-            ({ timelineIcon, timelineSubheading, timelineSubparagraph }) => {
+            ({ timelineIcon, timelineSubheading, timelineSubparagraph }, index) => {
               return (
-                <li>
+                <li key={index}>
                   <SubHeading icon={timelineIcon.sourceUrl}>
                     {timelineSubheading}
                   </SubHeading>

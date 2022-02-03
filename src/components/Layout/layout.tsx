@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import styled, { ThemeProvider} from 'styled-components'
+import React from 'react'
+import styled, { ThemeProvider } from 'styled-components'
 
 import Footer from '../Footer/Footer'
-import Nav from'../Nav/Nav'
+import Nav from '../Nav/Nav'
 import theme from './theme'
 import GlobalStyle from './GlobalStyle'
 
@@ -18,17 +18,16 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-
   return (
-      <ThemeProvider theme={theme}>
-        <MainContainer>
-          <GlobalStyle/>
-          <header>
-            <Nav/>
-          </header>
-          <main>{children}</main>
-          <Footer/>
-        </MainContainer>
+    <ThemeProvider theme={theme}>
+      <MainContainer>
+        <GlobalStyle />
+        <header>
+          <Nav />
+        </header>
+        <main>{children}</main>
+        <Footer />
+      </MainContainer>
     </ThemeProvider>
   )
 }
@@ -36,8 +35,8 @@ const Layout = ({ children }: LayoutProps) => {
 export default Layout
 
 const MainContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1920px;
 `

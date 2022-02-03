@@ -24,6 +24,9 @@ const ImageContainer = styled(GatsbyImage)`
   img {
     border-radius: 0;
   }
+  ${({ theme }) => theme.b_medium} {
+    border-radius: 0 32px 150px 0;
+  }
 
   ${({ theme }) => theme.b_small} {
     width: calc(100% - 1rem);
@@ -78,6 +81,17 @@ const StyledSection = styled.section`
     width: calc(100% - 5rem);
     height: 100%;
     border-radius: 0 32px 500px 0; */
+  }
+
+  ${({ theme }) => theme.b_medium} {
+    &::before {
+      border-radius: 0 32px 150px 0;
+    }
+
+    &::after {
+      border-radius: 0 32px 150px 0;
+      width: calc(100% - 1rem);
+    }
   }
 
   ${({ theme }) => theme.b_small} {
