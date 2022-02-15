@@ -12,15 +12,6 @@ const Hero = ({
   heroBgimg: { localFile }
 }) => {
   const img = getImage(localFile)
-  // const [refEl, setRelEl] = useState(element)
-
-  // useEffect(() => {
-  //   setRelEl(element)
-  // }, [element])
-
-  const onCLickHandler = () => {
-    // refEl.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   return (
     <StyledSection>

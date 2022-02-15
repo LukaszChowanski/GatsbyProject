@@ -25,6 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
         <header>
           <Nav />
         </header>
+
         <main>{children}</main>
         <Footer />
       </MainContainer>

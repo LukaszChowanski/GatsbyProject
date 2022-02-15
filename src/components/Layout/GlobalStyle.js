@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
+import '@fontsource/pt-sans'
+import '@fontsource/pt-sans/700.css'
 import theme from './theme'
 
 const { c_headings, c_paragraphs, c_btnLight } = theme

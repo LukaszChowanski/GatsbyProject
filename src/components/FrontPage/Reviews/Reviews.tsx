@@ -78,26 +78,27 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
         </div>
 
         <div className="glide__bullets" data-glide-el="controls[nav]">
-          {reviewsList.map((index): JSX.Element => {
+          {reviewsList.map((item, index): JSX.Element => {
             return (
               <button
                 className="glide__bullet"
                 data-glide-dir={`=${index}`}
-                name="slider-bullet"
+                name={`slider-bullet${index}`}
+                aria-label={`slider-bullet${index}`}
               ></button>
             )
           })}
         </div>
       </div>
       <div className="controls">
-        <button className="prev" onClick={prevSlide}>
+        <button className="prev" onClick={prevSlide} aria-label="prev">
           <StaticImage
             src="../../../images/arrow-left-square-fill.svg"
             alt="poprzedni"
           />
         </button>
         <StyledLink to={reviewsLink.url}>{reviewsLink.title}</StyledLink>
-        <button className="next" onClick={nextSlide}>
+        <button className="next" onClick={nextSlide} aria-label="next">
           <StaticImage
             src="../../../images/arrow-right-square-fill.svg"
             alt="kolejny"
