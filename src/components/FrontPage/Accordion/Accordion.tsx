@@ -25,7 +25,7 @@ const Accordion = ({ qaArray }: IProps): JSX.Element => {
   const [hiddenElement, setHiddenElement] = useState<number | null>(null)
   const onClick = (index: number) => {
     if (hiddenElement === index) {
-      setHiddenElement(999)
+      setHiddenElement(null)
     } else {
       setHiddenElement(index)
     }
@@ -127,13 +127,14 @@ const StyledSection = styled.section<Props>`
   .hiddenContent {
     max-height: 1px;
     transition: all 0.35s;
+    padding-inline: 2rem;
   }
 
   article {
     padding-top: 1rem;
   }
 
-  ${({ isHidden, height }) =>
+  ${({ isHidden, height }: Props) =>
     !isHidden &&
     css`
       .h3::after {

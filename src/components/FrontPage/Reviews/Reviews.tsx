@@ -81,6 +81,7 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
           {reviewsList.map((item, index): JSX.Element => {
             return (
               <button
+                key={index}
                 className="glide__bullet"
                 data-glide-dir={`=${index}`}
                 name={`slider-bullet${index}`}

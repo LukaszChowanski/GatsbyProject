@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import BootstrapContainer from '../components/SharedComponents/BootstrapContainer'
 import { StaticImage } from 'gatsby-plugin-image'
 
-const IndexPage = props => {
+const Opinions = props => {
   const reviewArray = props.data.allWpOpinia.nodes
 
   return (
@@ -35,7 +35,7 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+export default Opinions
 
 export const pageQuery = graphql`
   query Opinie {
