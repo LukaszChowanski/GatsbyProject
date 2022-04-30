@@ -21,6 +21,10 @@ const ImgContainer = styled.section`
   height: 100%;
   position: absolute;
 
+  img {
+    border-radius: 0;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -46,7 +50,7 @@ const ImgContainer = styled.section`
   .gatsby-image-wrapper {
     max-height: 100%;
     height: 100%;
-    border-radius: 32px 32px 500px 32px;
+    border-radius: 0 32px 500px 0;
   }
 `
 export { Container, ImgContainer }

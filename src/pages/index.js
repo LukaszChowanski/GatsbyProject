@@ -1,13 +1,12 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/layout'
 import Seo from '../components/seo'
-import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent/HomeFlexibleContent'
+import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent'
 
 const IndexPage = props => {
   const { title } = props.data.site.siteMetadata
-  const myRef = useRef(null)
 
   return (
     <Layout>
@@ -25,42 +24,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
-    }
-    wpPage(slug: { eq: "/" }) {
-      id
-      homepage {
-        flexibleContent {
-          ... on WpPage_Homepage_FlexibleContent_Hero {
-            heroModalbtncontent
-          }
-          ... on WpPage_Homepage_FlexibleContent_Simplesection {
-            fieldGroupName
-            simplesectionHeading
-          }
-          ... on WpPage_Homepage_FlexibleContent_Whatdoyougain {
-            fieldGroupName
-            whatdoyougainBtntext
-          }
-          ... on WpPage_Homepage_FlexibleContent_Timeline {
-            fieldGroupName
-            timelineHeading
-          }
-          ... on WpPage_Homepage_FlexibleContent_Blogposts {
-            fieldGroupName
-          }
-          ... on WpPage_Homepage_FlexibleContent_Reviews {
-            fieldGroupName
-          }
-          ... on WpPage_Homepage_FlexibleContent_Accordion {
-            fieldGroupName
-          }
-          ... on WpPage_Homepage_FlexibleContent_Appointment {
-            appointementShortcode
-            fieldGroupName
-          }
-        }
-      }
-      featuredImageId
     }
   }
 `

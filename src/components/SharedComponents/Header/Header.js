@@ -3,9 +3,7 @@ import { Container, ImgContainer } from './style'
 import BootstrapContainer from '../BootstrapContainer'
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import BgImg from '../../../images/hero_bg_optimized.jpg'
-
-const Header = ({ title, gatsbyImage }) => {
+const Header = ({ title, gatsbyImage, children }) => {
   return (
     <Container>
       <ImgContainer>
@@ -20,7 +18,7 @@ const Header = ({ title, gatsbyImage }) => {
         {/* <img src={background} alt="zdjęcie" /> */}
       </ImgContainer>
       <BootstrapContainer>
-        <h1>{title}</h1>
+        <h1>{title || children}</h1>
       </BootstrapContainer>
     </Container>
   )

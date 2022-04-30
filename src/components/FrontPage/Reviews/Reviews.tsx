@@ -51,66 +51,72 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
   }
 
   return (
-    <ReviewsContainer>
-      <div className="glide reviews-glide">
-        <div className="glide__track" data-glide-el="track">
-          <ul className="glide__slides">
-            {reviewsList &&
-              reviewsList.map(({ id, title, content }) => {
-                return (
-                  <li key={id} className="glide__slide">
-                    <h3>
-                      <StaticImage
-                        src="../../../images/user-circle-solid.svg"
-                        alt="ppl"
-                        width={28}
-                        height={28}
-                      />
-                      {title}
-                    </h3>
-                    <Wrapper
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    ></Wrapper>
-                  </li>
-                )
-              })}
-          </ul>
-        </div>
+    <ReviewsSection>
+      <ReviewsContainer>
+        <div className="glide reviews-glide">
+          <div className="glide__track" data-glide-el="track">
+            <ul className="glide__slides">
+              {reviewsList &&
+                reviewsList.map(({ id, title, content }) => {
+                  return (
+                    <li key={id} className="glide__slide">
+                      <h3>
+                        <StaticImage
+                          src="../../../images/user-circle-solid.svg"
+                          alt="ppl"
+                          width={28}
+                          height={28}
+                        />
+                        {title}
+                      </h3>
+                      <Wrapper
+                        dangerouslySetInnerHTML={{ __html: content }}
+                      ></Wrapper>
+                    </li>
+                  )
+                })}
+            </ul>
+          </div>
 
-        <div className="glide__bullets" data-glide-el="controls[nav]">
-          {reviewsList.map((item, index): JSX.Element => {
-            return (
-              <button
-                key={index}
-                className="glide__bullet"
-                data-glide-dir={`=${index}`}
-                name={`slider-bullet${index}`}
-                aria-label={`slider-bullet${index}`}
-              ></button>
-            )
-          })}
+          <div className="glide__bullets" data-glide-el="controls[nav]">
+            {reviewsList.map((_, index): JSX.Element => {
+              return (
+                <button
+                  key={index}
+                  className="glide__bullet"
+                  data-glide-dir={`=${index}`}
+                  name={`slider-bullet${index}`}
+                  aria-label={`slider-bullet${index}`}
+                ></button>
+              )
+            })}
+          </div>
         </div>
-      </div>
-      <div className="controls">
-        <button className="prev" onClick={prevSlide} aria-label="prev">
-          <StaticImage
-            src="../../../images/arrow-left-square-fill.svg"
-            alt="poprzedni"
-          />
-        </button>
-        <StyledLink to={reviewsLink.url}>{reviewsLink.title}</StyledLink>
-        <button className="next" onClick={nextSlide} aria-label="next">
-          <StaticImage
-            src="../../../images/arrow-right-square-fill.svg"
-            alt="kolejny"
-          />
-        </button>
-      </div>
-    </ReviewsContainer>
+        <div className="controls">
+          <button className="prev" onClick={prevSlide} aria-label="prev">
+            <StaticImage
+              src="../../../images/arrow-left-square-fill.svg"
+              alt="poprzedni"
+            />
+          </button>
+          <StyledLink to={reviewsLink.url}>{reviewsLink.title}</StyledLink>
+          <button className="next" onClick={nextSlide} aria-label="next">
+            <StaticImage
+              src="../../../images/arrow-right-square-fill.svg"
+              alt="kolejny"
+            />
+          </button>
+        </div>
+      </ReviewsContainer>
+    </ReviewsSection>
   )
 }
 
 export default Reviews
+
+const ReviewsSection = styled.section`
+  overflow: hidden;
+`
 
 const ReviewsContainer = styled(BootstrapContainer)`
   margin-block: 8rem;
@@ -205,6 +211,10 @@ const ReviewsContainer = styled(BootstrapContainer)`
   ${({ theme }) => theme.b_small} {
     .glide {
       width: 90%;
+    }
+
+    .controls {
+      transform: translateX(0);
     }
   }
 `

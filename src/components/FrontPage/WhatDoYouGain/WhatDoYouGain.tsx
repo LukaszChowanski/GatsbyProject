@@ -1,13 +1,13 @@
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
 
 type IProps = {
-  whatdoyougainBtntext: string,
-  whatdoyougainHeading: string,
-  whatdoyougainImg,
+  whatdoyougainBtntext: string
+  whatdoyougainHeading: string
+  whatdoyougainImg: any
   whatdoyougainParagraph: string
 }
 
@@ -49,7 +49,7 @@ const StyledSection = styled.section`
   position: relative;
   padding-block: 4rem;
 
-  ${({theme}) => theme.b_medium} {
+  ${({ theme }) => theme.b_medium} {
     padding-block: 1rem 1rem;
   }
 `
@@ -59,7 +59,7 @@ const Content = styled(BootstrapContainer)`
   position: relative;
   z-index: 1;
 
-  ${({theme}) => theme.b_medium} {
+  ${({ theme }) => theme.b_medium} {
     grid-template-columns: 1fr;
   }
 `
@@ -73,7 +73,7 @@ const LeftColumn = styled.div`
     left: 0;
     width: 150%;
     height: 100%;
-    background-color: ${({theme}) => theme.c_bg400};
+    background-color: ${({ theme }) => theme.c_bg400};
     border-radius: 32px 32px 500px 32px;
     z-index: 0;
   }
@@ -85,7 +85,7 @@ const LeftColumn = styled.div`
     left: 0;
     width: calc(150% + 6rem);
     height: 100%;
-    background-color: ${({theme}) => theme.c_bg600};
+    background-color: ${({ theme }) => theme.c_bg600};
     border-radius: 32px 32px 500px 32px;
     z-index: -1;
   }
@@ -139,7 +139,7 @@ const BackgroundImage = styled(GatsbyImage)`
     border-radius: 32px 0 0 500px;
     position: absolute;
     inset: 0;
-    background-color: ${({theme}) => theme.c_decorationBs};
+    background-color: ${({ theme }) => theme.c_decorationBs};
     z-index: 1;
   }
 

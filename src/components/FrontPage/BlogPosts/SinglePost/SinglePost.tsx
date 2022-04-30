@@ -13,7 +13,7 @@ const SinglePost = ({
   const img = getImage(featuredImage.node.localFile)
   return (
     <StyledLi>
-      <GatsbyImage image={img} alt="title" />
+      <GatsbyImage image={img} alt="title" width={385} height={230} />
       <h3>{title}</h3>
       <p dangerouslySetInnerHTML={{ __html: excerpt }}></p>
       <LinkStickBottom to={uri}>Czytaj więcej</LinkStickBottom>

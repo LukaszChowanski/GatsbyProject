@@ -24,12 +24,13 @@ const ImageContainer = styled(GatsbyImage)`
   img {
     border-radius: 0;
   }
+
   ${({ theme }) => theme.b_medium} {
+    width: calc(100% - 1rem);
     border-radius: 0 32px 150px 0;
   }
 
   ${({ theme }) => theme.b_small} {
-    width: calc(100% - 1rem);
     border-radius: 0 32px 64px 0;
   }
 `
@@ -72,15 +73,6 @@ const StyledSection = styled.section`
     height: 100%;
     border-radius: 0 32px 500px 0;
     z-index: 2;
-  }
-
-  img {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 5rem);
-    height: 100%;
-    border-radius: 0 32px 500px 0; */
   }
 
   ${({ theme }) => theme.b_medium} {

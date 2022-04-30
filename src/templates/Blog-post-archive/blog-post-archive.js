@@ -36,7 +36,6 @@ const BlogIndex = ({
         <StyledOl>
           {posts.map(post => {
             const { title, uri } = post,
-              sourceUrl = post.featuredImage.node.sourceUrl,
               img = getImage(post.featuredImage.node.localFile)
 
             return (
@@ -48,7 +47,7 @@ const BlogIndex = ({
                   height="230"
                 />
                 {/* <img src={sourceUrl} alt="" /> */}
-                <h2>{parse(title)}</h2>
+                <h2 className="h3">{parse(title)}</h2>
                 {parse(post.excerpt)}
                 <StyledLink to={uri} aria-label="czytaj więcej">
                   Czytaj więcej

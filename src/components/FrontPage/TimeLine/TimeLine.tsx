@@ -4,12 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
 
-type Image = {
-  sourceUrl: string
-}
-
 type SingleElement = {
-  timelineIcon: Image
+  timelineIcon: any
   timelineSubheading: string
   timelineSubparagraph: string
 }
@@ -40,10 +36,13 @@ const TimeLine = ({
         </H2Wrapper>
         <Grid>
           {timelineRepeater.map(
-            ({ timelineIcon, timelineSubheading, timelineSubparagraph }, index) => {
+            (
+              { timelineIcon, timelineSubheading, timelineSubparagraph },
+              index
+            ) => {
               return (
                 <li key={index}>
-                  <SubHeading icon={timelineIcon.sourceUrl}>
+                  <SubHeading icon={timelineIcon.localFile.publicURL}>
                     {timelineSubheading}
                   </SubHeading>
                   <p
@@ -55,7 +54,7 @@ const TimeLine = ({
           )}
         </Grid>
         <p dangerouslySetInnerHTML={{ __html: timelineParagraph }}></p>
-        <GreenButton>{timelineModaltext}</GreenButton>
+        <GreenButton onClick={() => {}}>{timelineModaltext}</GreenButton>
       </Content>
     </Container>
   )
@@ -124,7 +123,7 @@ const H2Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${({theme}) => theme.c_bg500};
+    background-color: ${({ theme }) => theme.c_bg500};
     border-radius: 32px 32px 500px 32px;
     z-index: 0;
   }
@@ -144,9 +143,9 @@ const H2Wrapper = styled.div`
       transform: translateY(0.8rem);
       width: min(64px, 100%);
       height: 2px;
-      background-color: ${({theme}) => theme.c_decoration};
-      -webkit-box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
-      box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
+      background-color: ${({ theme }) => theme.c_decoration};
+      -webkit-box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
+      box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
     }
   }
 `
@@ -170,8 +169,8 @@ const Grid = styled.ul`
     height: 90%;
     top: 0;
     left: 50%;
-    background-color: ${({theme}) => theme.c_decoration};
-    box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
+    background-color: ${({ theme }) => theme.c_decoration};
+    box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
     transform: translateX(-50%);
   }
 
@@ -233,15 +232,15 @@ const SubHeading = styled.h3<{ icon: string }>`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: ${({theme}) => theme.c_decoration};
+    background-color: ${({ theme }) => theme.c_decoration};
     position: absolute;
     top: calc(50% - 8px);
     right: calc(-5rem - 8px);
-    -webkit-box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
-    box-shadow: 0px 3px 6px ${({theme}) => theme.c_decorationBs};
+    -webkit-box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
+    box-shadow: 0px 3px 6px ${({ theme }) => theme.c_decorationBs};
   }
 
-  ${({theme}) => theme.b_medium} {
+  ${({ theme }) => theme.b_medium} {
     &::after {
       left: -40px;
       right: unset;

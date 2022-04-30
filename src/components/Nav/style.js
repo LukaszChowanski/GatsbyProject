@@ -6,6 +6,8 @@ const StyledNav = styled.nav`
   position: absolute;
   z-index: 100;
   width: 100%;
+  top: 0;
+  left: 0;
 
   & > div {
     background-color: #fff;
