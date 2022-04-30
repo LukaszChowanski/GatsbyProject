@@ -14,7 +14,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         // fieldName: "wpgraphql",
         // Url to query from
-        url: 'http://nas.gansa.pl/2021/rsgrupa/graphql'
+        url: 'https://backend.lukaszchowanski.pl/graphql'
       }
     },
     `gatsby-plugin-react-helmet`,
@@ -26,7 +26,17 @@ module.exports = {
       }
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          placeholder: 'blurred',
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

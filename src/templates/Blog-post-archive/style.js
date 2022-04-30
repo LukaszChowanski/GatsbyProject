@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
 const StyledLink = styled(Link)`
   color: #707070;
@@ -16,18 +16,22 @@ const StyledLink = styled(Link)`
 `
 
 const StyledOl = styled.ol`
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    column-gap: 1rem;
-    margin-top: 0;
-    padding-top: 1rem;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  column-gap: 1rem;
+  margin-top: 0;
+  padding-top: 1rem;
 
-    li {
+  li {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .gatsby-image-wrapper {
+    border-radius: 32px;
   }
 
   img {
@@ -53,4 +57,4 @@ const StyledOl = styled.ol`
   }
 `
 
-export { StyledLink, StyledOl}
+export { StyledLink, StyledOl }

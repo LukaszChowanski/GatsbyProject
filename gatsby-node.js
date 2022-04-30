@@ -41,7 +41,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
         path: post.uri,
 
         // use the blog post template as the page component
-        component: path.resolve(`./src/templates/Blog-post/blog-post.js`),
+        component: path.resolve(`./src/templates/Blog-post/blog-post.tsx`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -101,7 +101,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 
         // use the blog post archive template as the page component
         component: path.resolve(
-          `./src/templates/Blog-post-archive/blog-post-archive.js`
+          `./src/templates/Blog-post-archive/blog-post-archive.tsx`
         ),
 
         // `context` is available in the template as a prop and

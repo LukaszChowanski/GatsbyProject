@@ -30,6 +30,8 @@ const Nav = () => {
     siteTitle = data.site.siteMetadata.title,
     menuItems = data.wpMenu.menuItems.nodes
 
+  console.log(menuItems)
+
   const [isHidden, setIsHidden] = useState(true)
 
   const handleBurgerClick = () => {
@@ -42,17 +44,10 @@ const Nav = () => {
         <div> {siteTitle} </div>
         <MenuListOfElements mobile={isHidden}>
           {menuItems &&
-            menuItems.map(({ url, databaseId, label }) => {
-              if (url === 'http://nas.gansa.pl/2021/rsgrupa/') {
-                return (
-                  <li key={databaseId}>
-                    <Link to="/">{label}</Link>
-                  </li>
-                )
-              }
+            menuItems.map(({ databaseId, label, path }) => {
               return (
                 <li key={databaseId}>
-                  <Link to={url}>{label}</Link>
+                  <Link to={path}>{label}</Link>
                 </li>
               )
             })}
