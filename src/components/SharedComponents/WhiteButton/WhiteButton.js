@@ -1,11 +1,12 @@
+import { Link } from 'gatsby'
 import React, { memo } from 'react'
 import styled from 'styled-components'
 
-const WhiteButton = ({ children, onClick }) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>
+const WhiteButton = ({ children, to }) => {
+  return <StyledButton to={to}>{children}</StyledButton>
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled(Link)`
   background-color: ${({ theme: { c_btnBg } }) => c_btnBg ?? '#fff'};
   box-shadow: 0 8px 16px ${({ theme: { c_btnBgBs } }) => c_btnBgBs ?? '#fff'};
   color: ${({ theme: { c_btns } }) => c_btns ?? '#707070a1'};

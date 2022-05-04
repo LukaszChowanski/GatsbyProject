@@ -21,7 +21,7 @@ const Hero = ({
         <h2>{heroSubheading}</h2>
         <p>{heroParagraph}</p>
         <GreenButton>{heroModalbtncontent}</GreenButton>
-        <WhiteButton>Dowiedz się więcej</WhiteButton>
+        <WhiteButton to="/#content">Dowiedz się więcej</WhiteButton>
       </Container>
     </StyledSection>
   )

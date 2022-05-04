@@ -15,7 +15,6 @@ const Header = ({ title, gatsbyImage, children }) => {
           />
         )}
         {gatsbyImage && <GatsbyImage image={gatsbyImage} alt="" />}
-        {/* <img src={background} alt="zdjęcie" /> */}
       </ImgContainer>
       <BootstrapContainer>
         <h1>{title || children}</h1>

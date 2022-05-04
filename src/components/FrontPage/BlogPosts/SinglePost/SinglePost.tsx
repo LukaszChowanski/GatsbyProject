@@ -20,4 +20,4 @@ const SinglePost = ({
   )
 }
 
-export default SinglePost
+export default React.memo(SinglePost)
