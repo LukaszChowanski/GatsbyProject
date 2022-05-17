@@ -22,7 +22,7 @@ const SimpleSection = ({
 
   const anchor = index == 1 ? 'content' : null
   const isImage = simplesectionBgimg ? true : false
-  console.log(index)
+
   return (
     <StyledSection id={anchor}>
       <BootstrapContainer>

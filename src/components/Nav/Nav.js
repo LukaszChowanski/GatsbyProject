@@ -30,8 +30,6 @@ const Nav = () => {
     siteTitle = data.site.siteMetadata.title,
     menuItems = data.wpMenu.menuItems.nodes
 
-  console.log(menuItems)
-
   const [isHidden, setIsHidden] = useState(true)
 
   const handleBurgerClick = () => {

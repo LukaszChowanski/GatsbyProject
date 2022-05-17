@@ -29,6 +29,7 @@ const TimeLine = ({
         src="../../../images/background.jpg"
         alt="background"
         placeholder="blurred"
+        loading="lazy"
       />
       <Content>
         <H2Wrapper>

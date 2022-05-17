@@ -8,7 +8,6 @@ import BootstrapContainer from '../components/SharedComponents/BootstrapContaine
 import Header from '../components/SharedComponents/Header/Header'
 
 const AboutUs = ({ data }) => {
-  console.log(data)
   const chessboard =
     data.allWpPage.edges[0].node.subpages.subpageElasticContent[0]
       .acfChessboardsection
@@ -19,10 +18,10 @@ const AboutUs = ({ data }) => {
       <BootstrapContainer>
         {chessboard.map((field, index) => {
           const image = getImage(field.acfChessboardsectionimg.localFile)
-          console.log(index)
+
           return (
-            <Article>
-              {index % 2 === 0 && <GatsbyImage image={image} />}
+            <Article key={index}>
+              {index % 2 === 0 && <GatsbyImage image={image} alt="" />}
               <ArticleContent>
                 <h2>{field.acfChessboardsectionheading}</h2>
                 <p
@@ -31,7 +30,7 @@ const AboutUs = ({ data }) => {
                   }}
                 ></p>
               </ArticleContent>
-              {index % 2 === 1 && <GatsbyImage image={image} />}
+              {index % 2 === 1 && <GatsbyImage image={image} alt="" />}
             </Article>
           )
         })}
