@@ -14,7 +14,7 @@ const SinglePost = ({
     <StyledLi>
       {img && <GatsbyImage image={img} alt="title" loading="lazy" />}
       <h3>{title}</h3>
-      <p dangerouslySetInnerHTML={{ __html: excerpt }}></p>
+      <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
       <LinkStickBottom to={uri}>Czytaj więcej</LinkStickBottom>
     </StyledLi>
   )

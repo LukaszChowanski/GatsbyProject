@@ -25,7 +25,7 @@ const Opinions = props => {
             return (
               <li key={index}>
                 <h2>{item.title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
               </li>
             )
           })}

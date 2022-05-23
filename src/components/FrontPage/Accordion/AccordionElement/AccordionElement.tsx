@@ -25,10 +25,10 @@ const AccordionElement = ({
       </h2>
       <div className="hiddenContent">
         <article ref={myRef}>
-          <p
+          <div
             className="p"
             dangerouslySetInnerHTML={{ __html: accordionAnswer }}
-          ></p>
+          ></div>
         </article>
       </div>
     </StyledSection>

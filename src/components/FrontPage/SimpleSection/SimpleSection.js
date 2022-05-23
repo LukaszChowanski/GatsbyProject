@@ -35,7 +35,9 @@ const SimpleSection = ({
         </Background>
         <Content isImage={isImage}>
           <h2>{simplesectionHeading}</h2>
-          <p dangerouslySetInnerHTML={{ __html: simplesectionParagraph }}></p>
+          <div
+            dangerouslySetInnerHTML={{ __html: simplesectionParagraph }}
+          ></div>
           {simplesectionLink && (
             <StyledLink to={simplesectionLink.url}>
               {simplesectionLink.title}

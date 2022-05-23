@@ -48,15 +48,15 @@ const TimeLine = ({
                   <SubHeading icon={timelineIcon.localFile.publicURL}>
                     {timelineSubheading}
                   </SubHeading>
-                  <p
+                  <div
                     dangerouslySetInnerHTML={{ __html: timelineSubparagraph }}
-                  ></p>
+                  ></div>
                 </li>
               )
             }
           )}
         </Grid>
-        <p dangerouslySetInnerHTML={{ __html: timelineParagraph }}></p>
+        <div dangerouslySetInnerHTML={{ __html: timelineParagraph }}></div>
         <GreenButton onClick={openModal}>{timelineModaltext}</GreenButton>
       </Content>
     </Container>

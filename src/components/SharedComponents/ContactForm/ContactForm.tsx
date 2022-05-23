@@ -13,7 +13,7 @@ import {
 } from './style'
 
 type IProps = {
-  closeModal: (e: React.MouseEvent<HTMLElement>) => void
+  closeModal?: (e: React.MouseEvent<HTMLElement>) => void
 }
 
 const today = new Date(),
@@ -67,7 +67,7 @@ const ContactForm = React.forwardRef<HTMLDivElement, IProps>(
     return (
       <BootstrapContainer>
         <ContactSection>
-          <CloseModal onClick={closeModal}>x</CloseModal>
+          {closeModal && <CloseModal onClick={closeModal}>x</CloseModal>}
           {isSending && <Loader />}
 
           {image && <Background image={image} alt="" />}

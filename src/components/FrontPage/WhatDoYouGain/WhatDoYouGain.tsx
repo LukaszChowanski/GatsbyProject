@@ -40,7 +40,9 @@ const WhatDoYouGain = ({
         <LeftColumn>
           <Wrapper>
             <h2>{whatdoyougainHeading}</h2>
-            <p dangerouslySetInnerHTML={{ __html: whatdoyougainParagraph }}></p>
+            <div
+              dangerouslySetInnerHTML={{ __html: whatdoyougainParagraph }}
+            ></div>
             <GreenButton onClick={openModal}>
               {whatdoyougainBtntext}
             </GreenButton>

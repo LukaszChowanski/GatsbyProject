@@ -24,11 +24,11 @@ const AboutUs = ({ data }) => {
               {index % 2 === 0 && <GatsbyImage image={image} alt="" />}
               <ArticleContent>
                 <h2>{field.acfChessboardsectionheading}</h2>
-                <p
+                <div
                   dangerouslySetInnerHTML={{
                     __html: field.acfChessboardsectionparagraph
                   }}
-                ></p>
+                ></div>
               </ArticleContent>
               {index % 2 === 1 && <GatsbyImage image={image} alt="" />}
             </Article>
