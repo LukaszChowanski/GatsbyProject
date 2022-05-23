@@ -43,6 +43,11 @@ const FooterContainer = styled.footer`
   box-shadow: 0px 8px 16px #00000029;
   border-bottom: 3px solid #b70000;
 
+  ${({ theme }) => theme.b_small} {
+    flex-direction: column;
+    align-items: center;
+  }
+
   nav {
     margin-inline: auto;
   }

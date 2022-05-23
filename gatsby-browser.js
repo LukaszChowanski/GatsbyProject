@@ -1,7 +1,7 @@
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 
-export function replaceHydrateFunction() {
-  return (element, container, callback) => {
-    ReactDOM.render(element, container, callback)
-  }
-}
+// export function replaceHydrateFunction() {
+//   return (element, container, callback) => {
+//     ReactDOM.render(element, container, callback)
+//   }
+// }

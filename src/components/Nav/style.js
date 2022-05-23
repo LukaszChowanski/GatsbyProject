@@ -26,6 +26,9 @@ const StyledNav = styled.nav`
     }
   }
 `
+const Logo = styled.div`
+  /* border-radius: 50%; */
+`
 
 const MenuListOfElements = styled.ul`
   display: flex;
@@ -105,4 +108,4 @@ const Burger = styled.button`
   }
 `
 
-export { StyledNav, MenuListOfElements, Button, Burger }
+export { StyledNav, MenuListOfElements, Button, Burger, Logo }

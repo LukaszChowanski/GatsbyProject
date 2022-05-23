@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { getImage } from 'gatsby-plugin-image'
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
 import {
@@ -9,6 +9,7 @@ import {
   LeftColumn,
   Content
 } from './style'
+import ModalContext from '../../../ModalContext'
 
 type IProps = {
   whatdoyougainBtntext: string
@@ -25,6 +26,8 @@ const WhatDoYouGain = ({
 }: IProps): JSX.Element => {
   const img = getImage(whatdoyougainImg.localFile)
 
+  const { openModal } = useContext(ModalContext)
+
   return (
     <StyledSection>
       {img && (
@@ -38,7 +41,9 @@ const WhatDoYouGain = ({
           <Wrapper>
             <h2>{whatdoyougainHeading}</h2>
             <p dangerouslySetInnerHTML={{ __html: whatdoyougainParagraph }}></p>
-            <GreenButton>{whatdoyougainBtntext}</GreenButton>
+            <GreenButton onClick={openModal}>
+              {whatdoyougainBtntext}
+            </GreenButton>
           </Wrapper>
         </LeftColumn>
         {img && (
