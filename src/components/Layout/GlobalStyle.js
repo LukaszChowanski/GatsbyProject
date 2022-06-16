@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import '@fontsource/pt-sans'
-import '@fontsource/pt-sans/700.css'
+import '@fontsource/roboto-condensed'
+import '@fontsource/roboto-condensed/700.css'
 import theme from './theme'
 
 const { c_headings, c_paragraphs, c_btnLight } = theme
@@ -16,19 +16,19 @@ const GlobalStyle = createGlobalStyle`
 
   h1,
 .h1 {
-  font: normal normal 700 64px/64px "PT Sans", sans-serif;
+  font: normal normal 700 64px/64px "Roboto Condensed", sans-serif;
   color: ${c_headings};
 }
 
 h2,
 .h2 {
-  font: normal normal 700 32px/32px "PT Sans", sans-serif;
+  font: normal normal 700 32px/32px "Roboto Condensed", sans-serif;
   color: ${c_headings};
 }
 
 h3,
 .h3 {
-  font: normal normal 700 28px/28px "PT Sans", sans-serif;
+  font: normal normal 700 28px/28px "Roboto Condensed", sans-serif;
   color: ${c_headings};
 }
 
@@ -37,13 +37,13 @@ p,
 span,
 label,
 li {
-  font: normal normal 400 20px/23px "PT Sans", sans-serif;
+  font: normal normal 400 20px/23px "Roboto Condensed", sans-serif;
   color: ${c_paragraphs};
   margin-top: 0;
   margin-bottom: 0;
 
   &--small {
-    font: normal normal 400 16px/18px "PT Sans", sans-serif;
+    font: normal normal 400 16px/18px "Roboto Condensed", sans-serif;
   }
 }
 
@@ -60,7 +60,7 @@ h3 {
 
 button,
 a {
-  font: normal normal 400 18px/21px "PT Sans", sans-serif;
+  font: normal normal 400 18px/21px "Roboto Condensed", sans-serif;
   padding: 4px 16px;
   text-decoration: none;
   border-radius: 4px;
@@ -77,23 +77,23 @@ a {
 
 img {
   max-width: 100%;
-  border-radius: 32px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
   h1,
   .h1 {
-    font: normal normal 700 55px/55px "PT Sans", sans-serif;
+    font: normal normal 700 55px/55px "Roboto Condensed", sans-serif;
   }
 
   h2,
   .h2 {
-    font: normal normal 700 27px/27px "PT Sans", sans-serif;
+    font: normal normal 700 27px/27px "Roboto Condensed", sans-serif;
   }
 
   h3,
   .h3 {
-    font: normal normal 700 24px/24px "PT Sans", sans-serif;
+    font: normal normal 700 24px/24px "Roboto Condensed", sans-serif;
   }
 
   p,
@@ -101,17 +101,17 @@ img {
   span,
   label,
   li {
-    font: normal normal 400 16px/18px "PT Sans", sans-serif;
+    font: normal normal 400 16px/18px "Roboto Condensed", sans-serif;
     margin-top: 0;
   margin-bottom: 0;
 
     &--small {
-      font: normal normal 400 14px/16px "PT Sans", sans-serif;
+      font: normal normal 400 14px/16px "Roboto Condensed", sans-serif;
     }
   }
   button,
   a {
-    font: normal normal 400 16px/21px "PT Sans", sans-serif;
+    font: normal normal 400 16px/21px "Roboto Condensed", sans-serif;
   }
 }
 `

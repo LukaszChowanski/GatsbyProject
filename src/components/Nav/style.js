@@ -25,9 +25,10 @@ const StyledNav = styled.nav`
       grid-template-columns: 70px 1fr 32px;
     }
   }
-`
-const Logo = styled.div`
-  /* border-radius: 50%; */
+
+  img {
+    border-radius: 50%;
+  }
 `
 
 const MenuListOfElements = styled.ul`
@@ -40,12 +41,17 @@ const MenuListOfElements = styled.ul`
   margin-inline: auto;
 
   & a {
-    font: normal normal 400 18px/21px 'PT Sans';
+    font: normal normal 700 14px/19px 'PT Sans';
     color: ${props => props.theme.c_paragraphs};
     padding: 0.6em 1em 0.4em;
     line-height: 1;
     text-decoration: none;
+    text-transform: uppercase;
     border-radius: 4px;
+
+    &[aria-current='page'] {
+      text-decoration: underline 3px ${({ theme }) => theme.c_decoration};
+    }
   }
 
   @media (max-width: 767px) {
@@ -108,4 +114,4 @@ const Burger = styled.button`
   }
 `
 
-export { StyledNav, MenuListOfElements, Button, Burger, Logo }
+export { StyledNav, MenuListOfElements, Button, Burger }

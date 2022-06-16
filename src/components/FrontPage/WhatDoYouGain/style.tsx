@@ -32,49 +32,44 @@ const LeftColumn = styled.div`
     width: 150%;
     height: 100%;
     background-color: ${({ theme }) => theme.c_bg400};
-    border-radius: 32px 32px 500px 32px;
+    border-radius: 16px;
     z-index: 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(150% + 6rem);
-    height: 100%;
-    background-color: ${({ theme }) => theme.c_bg600};
-    border-radius: 32px 32px 500px 32px;
-    z-index: -1;
+  ${({ theme }) => theme.b_medium} {
+    &::before {
+      width: calc(100%);
+      border-radius: 16px;
+    }
   }
 
-  @media (max-width: 1064px) {
+  ${({ theme }) => theme.b_xs} {
     &::before {
-      width: calc(100% - 1rem);
-      border-radius: 32px 32px 150px 32px;
-    }
-
-    &::after {
-      width: 100%;
-      border-radius: 32px 32px 150px 32px;
+      width: calc(100% - 2rem);
+      margin-left: 1rem;
+      border-radius: 16px;
     }
   }
 `
 const ContentImg = styled(GatsbyImage)`
-  margin-top: 6rem;
-
+  align-self: center;
   img {
     width: 100%;
     height: auto;
     aspect-ratio: 3/2;
+    border-radius: 16px;
   }
 
-  @media (max-width: 1064px) {
+  ${({ theme }) => theme.b_medium} {
     margin-top: 2rem;
+  }
+
+  ${({ theme }) => theme.b_xs} {
+    display: none;
   }
 `
 const Wrapper = styled.div`
-  padding: 2rem 2rem 6rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +80,7 @@ const Wrapper = styled.div`
   }
 `
 const BackgroundImage = styled(GatsbyImage)`
-  border-radius: 32px 0 0 500px;
+  border-radius: 32px 0 0 32px;
   position: absolute;
   right: 0;
   top: 0;
@@ -94,19 +89,19 @@ const BackgroundImage = styled(GatsbyImage)`
 
   &::before {
     content: '';
-    border-radius: 32px 0 0 500px;
+    border-radius: 32px 0 0 32px;
     position: absolute;
     inset: 0;
     background-color: ${({ theme }) => theme.c_decorationBs};
     z-index: 1;
   }
 
-  @media (max-width: 1064px) {
-    border-radius: 32px 0 0 150px;
+  ${({ theme }) => theme.b_medium} {
+    border-radius: 16px 0 0 16px;
     width: 100%;
 
     &::before {
-      border-radius: 32px 0 0 150px;
+      border-radius: 16px 0 0 16px;
     }
   }
 `

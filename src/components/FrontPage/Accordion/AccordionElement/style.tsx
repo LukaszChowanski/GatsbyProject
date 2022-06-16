@@ -3,8 +3,8 @@ import plus from '/src/images/plus.svg'
 import minus from '/src/images/minus.svg'
 
 type SectionProps = {
-  show?: boolean
-  height?: number | undefined
+  readonly show?: boolean
+  readonly height?: number | undefined
 }
 
 export default styled.section<SectionProps>`
@@ -29,7 +29,7 @@ export default styled.section<SectionProps>`
       min-width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: #b70000;
+      background-color: ${({ theme }) => theme.c_decoration};
     }
 
     &::after {

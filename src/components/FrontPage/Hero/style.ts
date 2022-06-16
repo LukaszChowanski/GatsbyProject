@@ -15,23 +15,10 @@ const Container = styled(BootstrapContainer)`
 
 const ImageContainer = styled(GatsbyImage)`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% - 5rem);
-  height: 100%;
-  border-radius: 0 32px 500px 0;
+  inset: 0;
 
   img {
     border-radius: 0;
-  }
-
-  ${({ theme }) => theme.b_medium} {
-    width: calc(100% - 1rem);
-    border-radius: 0 32px 150px 0;
-  }
-
-  ${({ theme }) => theme.b_small} {
-    border-radius: 0 32px 64px 0;
   }
 `
 
@@ -51,53 +38,17 @@ const StyledSection = styled.section`
     text-align: center;
   }
 
-  &::before {
-    content: ' ';
-    position: absolute;
-    background-color: ${({ theme }) => theme.c_bg400};
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 32px 500px 0;
-    z-index: 0;
-  }
-
   &::after {
     content: ' ';
     position: absolute;
-    background-color: #707070a1;
-    top: 0;
-    left: 0;
-    width: calc(100% - 5rem);
-    height: 100%;
-    border-radius: 0 32px 500px 0;
+    inset: 0;
     z-index: 2;
-  }
-
-  ${({ theme }) => theme.b_medium} {
-    &::before {
-      border-radius: 0 32px 150px 0;
-    }
-
-    &::after {
-      border-radius: 0 32px 150px 0;
-      width: calc(100% - 1rem);
-    }
+    background-color: #00000084;
   }
 
   ${({ theme }) => theme.b_small} {
     h1 {
       text-align: center;
-    }
-
-    &::before {
-      border-radius: 0 32px 64px 0;
-    }
-
-    &::after {
-      border-radius: 0 32px 64px 0;
-      width: calc(100% - 1rem);
     }
   }
 `

@@ -18,6 +18,11 @@ const CloseModal = styled.button`
   color: #000;
   padding: 0;
   font-weight: 700;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Loader = styled.div`
@@ -98,7 +103,7 @@ const Content = styled.div`
 
   input {
     height: 32px;
-    border-radius: 50px;
+    border-radius: 8px;
     border: none;
     padding-inline: 1rem;
   }
@@ -114,6 +119,19 @@ const Background = styled(GatsbyImage)`
   position: absolute;
   inset: 0;
   z-index: -1;
+
+  img {
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background-color: #000000a1;
+    border-radius: 8px;
+  }
 `
 const LabelCol = styled.label`
   display: flex;

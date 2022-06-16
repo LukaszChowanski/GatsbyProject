@@ -1,7 +1,7 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import React from 'react'
+import React, { useState } from 'react'
 import IProps from '../types'
-import { StyledLi, LinkStickBottom } from '../style'
+import { StyledLi, ContentLi, LinkStickBottom } from '../style'
 
 const SinglePost = ({
   excerpt,
@@ -9,12 +9,24 @@ const SinglePost = ({
   title,
   uri
 }: IProps): JSX.Element => {
+  const [isEnter, setIsEnter] = useState(false)
   const img = getImage(featuredImage.node.localFile)
+
+  const handleMouseEnter = () => {
+    setIsEnter(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsEnter(false)
+  }
+
   return (
-    <StyledLi>
+    <StyledLi onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <ContentLi hover={isEnter}>
+        <h3>{title}</h3>
+        <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+      </ContentLi>
       {img && <GatsbyImage image={img} alt="title" loading="lazy" />}
-      <h3>{title}</h3>
-      <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
       <LinkStickBottom to={uri}>Czytaj więcej</LinkStickBottom>
     </StyledLi>
   )

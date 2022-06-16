@@ -11,7 +11,7 @@ const Footer = () => {
   } = useStaticQuery(footerNavigation)
 
   return (
-    <BootstrapContainer>
+    <Container>
       <FooterContainer>
         <a href="#">Testowa strona na Gatsby.js</a>
         <nav>
@@ -26,13 +26,18 @@ const Footer = () => {
         </nav>
         <a href="#">Cos tam cos tam</a>
       </FooterContainer>
-    </BootstrapContainer>
+    </Container>
   )
 }
 
 export default Footer
 
+const Container = styled(BootstrapContainer)`
+  margin-top: auto;
+`
+
 const FooterContainer = styled.footer`
+  justify-self: flex-end;
   margin-top: 5rem;
   width: 100%;
   display: flex;
@@ -41,7 +46,7 @@ const FooterContainer = styled.footer`
   padding-block: 22px;
   border-radius: 32px 32px 0 0;
   box-shadow: 0px 8px 16px #00000029;
-  border-bottom: 3px solid #b70000;
+  border-bottom: 3px solid ${({ theme }) => theme.c_decoration};
 
   ${({ theme }) => theme.b_small} {
     flex-direction: column;

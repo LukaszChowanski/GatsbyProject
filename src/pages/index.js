@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
 import Seo from '../components/seo'
 import HomeFlexibleContent from '../components/FrontPage/HomeFlexibleContent'
-// import ContactForm from '../components/SharedComponents/ContactForm/ContactForm'
 
 const IndexPage = props => {
   const { title } = props.data.site.siteMetadata
@@ -13,7 +12,6 @@ const IndexPage = props => {
     <Layout>
       <Seo title={title} />
       <HomeFlexibleContent />
-      {/* <ContactForm /> */}
     </Layout>
   )
 }

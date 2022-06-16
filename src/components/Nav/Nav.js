@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import { StyledNav, MenuListOfElements, Button, Burger, Logo } from './style'
+import { StyledNav, MenuListOfElements, Button, Burger } from './style'
 import BootstrapContainer from '../SharedComponents/BootstrapContainer'
 
 import ModalContext from '../../ModalContext'
@@ -39,7 +39,7 @@ const Nav = () => {
               )
             })}
         </MenuListOfElements>
-        <Button onClick={openModal}>Umów się na bezpłatną konsultację</Button>
+        <Button onClick={openModal}>Modal</Button>
         <Burger onClick={handleBurgerClick} aria-label="main menu toggle" />
       </BootstrapContainer>
     </StyledNav>

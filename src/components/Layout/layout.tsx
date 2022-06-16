@@ -78,6 +78,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   margin: 0 auto;
   max-width: 1920px;
+  min-height: 100vh;
 `
 const Modal = styled.div`
   position: fixed;

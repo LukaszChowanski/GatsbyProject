@@ -13,34 +13,19 @@ const ImageContainer = styled(GatsbyImage)`
   position: absolute;
   inset: 0;
   background-color: ${({ theme }) => theme.c_bg400};
-  border-radius: 32px 32px 500px 32px;
-  width: calc(100% - 5rem);
+  border-radius: 8px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 32px 32px 500px 32px;
+    border-radius: 8px;
     background-color: #70707080;
     z-index: 1;
   }
 
   img {
-    border-radius: 32px 32px 500px 32px;
-
-    ${({ theme }) => theme.b_small} {
-      width: calc(100% - 1rem);
-      border-radius: 32px 32px 150px 32px;
-    }
-  }
-
-  ${({ theme }) => theme.b_small} {
-    width: calc(100% - 1rem);
-    border-radius: 32px 32px 150px 32px;
-
-    &::before {
-      border-radius: 32px 32px 150px 32px;
-    }
+    border-radius: 8px;
   }
 `
 
@@ -48,14 +33,8 @@ const PlaceholderBackground = styled.div`
   position: absolute;
   inset: 0;
   z-index: 2;
-  background-color: ${({ theme }) => theme.c_bg400};
-  border-radius: 32px 32px 500px 32px;
-  width: calc(100% - 5rem);
-
-  ${({ theme }) => theme.b_small} {
-    width: calc(100% - 1rem);
-    border-radius: 32px 32px 150px 32px;
-  }
+  background-color: #f8f8f8;
+  border-radius: 16px;
 `
 
 const Background = styled.div`
@@ -64,29 +43,32 @@ const Background = styled.div`
   z-index: 1;
   width: 100%;
   background-color: ${({ theme }) => theme.c_bg600};
-  border-radius: 32px 32px 500px 32px;
-
-  ${({ theme }) => theme.b_small} {
-    border-radius: 32px 32px 150px 32px;
-  }
+  border-radius: 16px;
 `
 
 const Content = styled.article`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  width: calc(100% - 7rem);
+  width: 100%;
   position: relative;
   z-index: 4;
   gap: 1rem;
 
-  ${({ theme }) => theme.b_small} {
-    width: calc(100% - 2rem);
-  }
-
   ${({ isImage }) =>
     isImage &&
     css`
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: 16px;
+        background-color: #00000064;
+      }
+
       h2,
       p {
         color: ${({ theme }) => theme.c_headingsLight};
@@ -109,7 +91,12 @@ const Content = styled.article`
     }
   }
   p {
-    font: normal normal normal 20px/23px 'PT Sans';
+    font: normal normal normal 20px/23px ${({ theme }) => theme.f_regular};
+    max-width: 75%;
+
+    ${({ theme }) => theme.b_small} {
+      max-width: 90%;
+    }
   }
 `
 export {

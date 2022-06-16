@@ -5,7 +5,7 @@ type ISimple = {
   accordionAnswer: string
   accordionQuestion: string
   onClick: (index: number) => void
-  isVisible: boolean
+  isVisible: boolean | undefined
   index: number
 }
 

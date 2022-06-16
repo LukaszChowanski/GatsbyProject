@@ -36,21 +36,25 @@ const TimeLine = ({
       <Content>
         <H2Wrapper>
           <h2>{timelineHeading}</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
         </H2Wrapper>
         <Grid>
           {timelineRepeater.map(
-            (
-              { timelineIcon, timelineSubheading, timelineSubparagraph },
-              index
-            ) => {
+            ({ timelineSubheading, timelineSubparagraph }, index) => {
               return (
                 <li key={index}>
-                  <SubHeading icon={timelineIcon.localFile.publicURL}>
-                    {timelineSubheading}
-                  </SubHeading>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: timelineSubparagraph }}
-                  ></div>
+                  <SubHeading>{timelineSubheading}</SubHeading>
+                  <div>
+                    <h3>Lorem ipsum</h3>
+                    <p
+                      dangerouslySetInnerHTML={{ __html: timelineSubparagraph }}
+                    ></p>
+                  </div>
                 </li>
               )
             }
