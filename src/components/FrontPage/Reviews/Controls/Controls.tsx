@@ -18,14 +18,14 @@ const Controls = ({ reviewsLink, prevSlide, nextSlide }: IProps) => {
     <div className="controls">
       <button className="prev" onClick={prevSlide} aria-label="prev">
         <StaticImage
-          src="../../../images/arrow-left-square-fill.svg"
+          src="../../../../images/arrow-left-square-fill.svg"
           alt="poprzedni"
         />
       </button>
       <StyledLink to={reviewsLink.url}>{reviewsLink.title}</StyledLink>
       <button className="next" onClick={nextSlide} aria-label="next">
         <StaticImage
-          src="../../../images/arrow-right-square-fill.svg"
+          src="../../../../images/arrow-right-square-fill.svg"
           alt="kolejny"
         />
       </button>

@@ -1,5 +1,4 @@
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import React from 'react'
 import styled from 'styled-components'
 import BootstrapContainer from '../SharedComponents/BootstrapContainer'
 
