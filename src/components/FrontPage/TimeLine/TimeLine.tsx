@@ -2,7 +2,14 @@ import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
-import { SubHeading, Grid, H2Wrapper, Content, Container } from './styles'
+import {
+  SubHeading,
+  Grid,
+  H2Wrapper,
+  Content,
+  Container,
+  Wrapper
+} from './styles'
 import ModalContext from '../../../ModalContext'
 
 type SingleElement = {
@@ -51,16 +58,18 @@ const TimeLine = ({
                   <SubHeading>{timelineSubheading}</SubHeading>
                   <div>
                     <h3>Lorem ipsum</h3>
-                    <p
+                    <div
                       dangerouslySetInnerHTML={{ __html: timelineSubparagraph }}
-                    ></p>
+                    ></div>
                   </div>
                 </li>
               )
             }
           )}
         </Grid>
-        <div dangerouslySetInnerHTML={{ __html: timelineParagraph }}></div>
+        <Wrapper
+          dangerouslySetInnerHTML={{ __html: timelineParagraph }}
+        ></Wrapper>
         <GreenButton onClick={openModal}>{timelineModaltext}</GreenButton>
       </Content>
     </Container>

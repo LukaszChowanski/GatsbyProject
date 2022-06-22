@@ -22,7 +22,7 @@ const StyledOl = styled.ol`
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   column-gap: 1rem;
   margin-top: 0;
-  padding-top: 1rem;
+  padding: 1rem;
 
   li {
     display: flex;

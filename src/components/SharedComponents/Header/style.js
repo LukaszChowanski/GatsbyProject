@@ -4,6 +4,7 @@ const Container = styled.header`
   margin-bottom: 3rem;
   display: grid;
   position: relative;
+  padding: 1rem;
 
   & > div {
     padding-top: 100px;
@@ -17,22 +18,12 @@ const Container = styled.header`
 `
 
 const ImgContainer = styled.section`
-  width: calc(100% - 5rem);
+  width: 100%;
   height: 100%;
   position: absolute;
 
   img {
     border-radius: 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: calc(100% + 5rem);
-    background-color: #f8f8f8;
-    border-radius: 0 32px 500px 0;
-    z-index: 0;
   }
 
   &::after {
@@ -43,14 +34,12 @@ const ImgContainer = styled.section`
     z-index: 2;
     width: 100%;
     height: 100%;
-    background-color: #707070a1;
-    border-radius: 0 32px 500px 0;
+    background-color: #00000084;
   }
 
   .gatsby-image-wrapper {
     max-height: 100%;
     height: 100%;
-    border-radius: 0 32px 500px 0;
   }
 `
 export { Container, ImgContainer }

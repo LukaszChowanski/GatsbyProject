@@ -40,21 +40,17 @@ const ContactForm = React.forwardRef<HTMLDivElement, IProps>(
       event.preventDefault()
 
       const fd = new FormData()
-      fd.append('your-name', event.target.yourName.value)
-      fd.append('your-email', event.target.yourEmail.value)
-      fd.append('your-subject', event.target.yourPhone.value)
-      fd.append('date-300', event.target.date.value)
+      fd.append('your-name', event.target.elements.yourName.value)
+      fd.append('your-email', event.target.elements.yourEmail.value)
+      fd.append('your-subject', event.target.elements.yourPhone.value)
+      fd.append('date-300', event.target.elements.date.value)
 
-      fetch(
-        'https://backend.lukaszchowanski.pl/wp-json/contact-form-7/v1/contact-forms/293/feedback',
-        {
-          method: 'POST',
-          body: fd
-        }
-      )
+      fetch(`${process.env.GATSBY_FORM_URL}`, {
+        method: 'POST',
+        body: fd
+      })
         .then(res => res.json())
         .then(res => {
-          console.log(res)
           setIsSending(false)
           setMessage(res.message)
           event.target.reset()
@@ -74,7 +70,7 @@ const ContactForm = React.forwardRef<HTMLDivElement, IProps>(
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-x"
+                className="bi bi-x"
                 viewBox="0 0 16 16"
               >
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />

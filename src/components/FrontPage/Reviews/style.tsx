@@ -95,16 +95,33 @@ const ReviewsContainer = styled(BootstrapContainer)`
       padding-block: 0.5rem;
     }
   }
+
+  ${({ theme }) => theme.b_small} {
+    .glide {
+      width: 80%;
+    }
+
+    li.glide__slide {
+      transform: scale(0.95);
+      opacity: calc(0.9);
+    }
+  }
+`
+
+const StyledLi = styled.li`
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  padding: 4rem 4rem 6rem;
+
+  ${({ theme }) => theme.b_small} {
+    padding: 2rem 2rem 4rem;
+  }
 `
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  padding: 2rem;
-  padding-bottom: 4rem;
   color: #707070;
-  background-color: #f8f8f8;
-  border-radius: 16px;
 
   p {
     text-align: center;
@@ -121,4 +138,4 @@ const Wrapper = styled.div`
     }
   }
 `
-export { ReviewsSection, ReviewsContainer, Wrapper }
+export { ReviewsSection, ReviewsContainer, Wrapper, StyledLi }

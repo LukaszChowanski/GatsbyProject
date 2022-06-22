@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Portfolio page`,
@@ -14,7 +18,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         // fieldName: "wpgraphql",
         // Url to query from
-        url: 'https://backend.lukaszchowanski.pl/graphql'
+        url: process.env.API_URL
       }
     },
     `gatsby-plugin-react-helmet`,

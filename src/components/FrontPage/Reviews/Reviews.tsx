@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import Glide from '@glidejs/glide'
 import '@glidejs/glide/dist/css/glide.core.min.css'
 
-import { ReviewsSection, ReviewsContainer, Wrapper } from './style'
+import { ReviewsSection, ReviewsContainer } from './style'
 import Bullet from './Bullets/Bullets'
-import Controls from './Controls/Controls'
 import Review from './Review/Review'
 
 type ReviewsLink = {
@@ -33,7 +32,8 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
       perView: 1,
       breakpoints: {
         787: {
-          perView: 1
+          perView: 1,
+          gap: 8
         }
       }
     })
@@ -43,14 +43,6 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
     return () => slider.destroy()
   })
 
-  const nextSlide = () => {
-    slider.go('>')
-  }
-
-  const prevSlide = () => {
-    slider.go('<')
-  }
-
   return (
     <ReviewsSection>
       <ReviewsContainer>
@@ -59,23 +51,17 @@ const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
             <ul className="glide__slides">
               {reviewsList &&
                 reviewsList.map(({ id, title, content }) => (
-                  <Review id={id} title={title} content={content} />
+                  <Review key={id} id={id} title={title} content={content} />
                 ))}
             </ul>
           </div>
 
           <div className="glide__bullets" data-glide-el="controls[nav]">
             {reviewsList.map((_, index): JSX.Element => {
-              return <Bullet index={index}></Bullet>
+              return <Bullet key={index} index={index}></Bullet>
             })}
           </div>
         </div>
-
-        <Controls
-          reviewsLink={reviewsLink}
-          prevSlide={prevSlide}
-          nextSlide={nextSlide}
-        />
       </ReviewsContainer>
     </ReviewsSection>
   )

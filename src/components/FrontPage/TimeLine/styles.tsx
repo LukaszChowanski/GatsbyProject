@@ -70,6 +70,7 @@ const Grid = styled.ul`
   flex-direction: column;
   gap: 3rem;
   padding-left: 40px;
+  margin-bottom: 3rem;
 
   &::before {
     content: '';
@@ -84,11 +85,21 @@ const Grid = styled.ul`
 
   li {
     display: flex;
+    align-items: flex-start;
     gap: 2rem;
   }
 
   h3 {
     margin-bottom: 1rem;
+  }
+`
+
+const Wrapper = styled.div`
+  max-width: 70%;
+  margin: 0 auto;
+
+  p {
+    text-align: center;
   }
 `
 
@@ -116,4 +127,4 @@ const SubHeading = styled.div`
     border-radius: 50%;
   }
 `
-export { SubHeading, Grid, H2Wrapper, Content, Container }
+export { SubHeading, Grid, H2Wrapper, Content, Container, Wrapper }
