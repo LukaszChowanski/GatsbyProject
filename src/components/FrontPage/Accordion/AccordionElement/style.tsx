@@ -15,6 +15,11 @@ export default styled.section<SectionProps>`
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.c_bg400};
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  cursor: pointer;
 
   .h3 {
     display: flex;
@@ -57,19 +62,36 @@ export default styled.section<SectionProps>`
     max-height: 0px;
     transition: all 0.35s;
     padding-inline: 2rem;
+    overflow: hidden;
   }
 
   article {
     padding-top: 1rem;
   }
 
-  ${({ show, height }: SectionProps) =>
+  ${({ show, height, theme }) =>
     show &&
     css`
+      background-image: linear-gradient(
+        155deg,
+        ${theme.c_decorationBs},
+        ${theme.c_decoration}
+      );
+      padding-block: 1rem;
+
+      .h3 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+
       .h3::after {
         background-image: url(${minus});
         transform: rotate(180deg);
       }
+
       .hiddenContent {
         max-height: ${height}px;
       }

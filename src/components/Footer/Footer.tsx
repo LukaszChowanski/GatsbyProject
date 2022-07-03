@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-        <a href="#">Testowa strona na Gatsby.js</a>
+        <p>Portfolio projekt Gatsby.js</p>
         <nav>
           <ul>
             {nodes &&
@@ -24,7 +24,7 @@ const Footer = () => {
               ))}
           </ul>
         </nav>
-        <a href="#">Cos tam cos tam</a>
+        <a href="https://www.pexels.com/">Zdjecia: https://www.pexels.com/</a>
       </FooterContainer>
     </Container>
   )
@@ -64,8 +64,13 @@ const FooterContainer = styled.footer`
     padding-left: 0;
   }
 
-  a {
+  a,
+  p {
     color: ${({ theme }) => theme.c_btns};
+  }
+
+  p {
+    padding-inline: 1rem;
   }
 `
 const footerNavigation = graphql`

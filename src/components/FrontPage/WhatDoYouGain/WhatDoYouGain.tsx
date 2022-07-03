@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { getImage } from 'gatsby-plugin-image'
-import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
+import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
 import {
   StyledSection,
   BackgroundImage,
@@ -43,9 +43,9 @@ const WhatDoYouGain = ({
             <div
               dangerouslySetInnerHTML={{ __html: whatdoyougainParagraph }}
             ></div>
-            <GreenButton onClick={openModal}>
+            <ModalButton onClick={openModal}>
               {whatdoyougainBtntext}
-            </GreenButton>
+            </ModalButton>
           </Wrapper>
         </LeftColumn>
         {img && (

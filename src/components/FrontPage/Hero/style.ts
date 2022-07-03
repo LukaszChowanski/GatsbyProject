@@ -46,6 +46,11 @@ const StyledSection = styled.section`
     background-color: #00000084;
   }
 
+  a {
+    box-shadow: none;
+    border-radius: 8px 8px 0 0;
+  }
+
   ${({ theme }) => theme.b_small} {
     h1 {
       text-align: center;

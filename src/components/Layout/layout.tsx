@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Footer from '../Footer/Footer'
@@ -14,28 +14,19 @@ import theme from './theme'
 import GlobalStyle from './GlobalStyle'
 import ContactForm from '../SharedComponents/ContactForm/ContactForm'
 import ModalContext from '../../ModalContext'
+import useModal from './useModal'
 
 type LayoutProps = {
   children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const [isVisible, setIsVisible] = useState(false)
   const clickRef = useRef<HTMLDivElement>(null)
+  const [isVisible, openModal, closeModal] = useModal()
 
-  const openModal = (e: React.MouseEvent<HTMLElement>) => {
-    e.stopPropagation()
-    setIsVisible(true)
-  }
-
-  const closeModal = (e: React.MouseEvent<HTMLElement>) => {
-    e.stopPropagation()
-    setIsVisible(false)
-  }
-
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    if (clickRef.current && !clickRef.current.contains(e.target as Node)) {
-      setIsVisible(false)
+  const handleClick = (ev: MouseEvent) => {
+    if (clickRef.current && !clickRef.current.contains(ev.target as Node)) {
+      closeModal()
     }
   }
 
@@ -43,7 +34,6 @@ const Layout = ({ children }: LayoutProps) => {
     if (isVisible) {
       document.addEventListener('click', handleClick)
     }
-
     return () => {
       document.removeEventListener('click', handleClick)
     }

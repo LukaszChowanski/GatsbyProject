@@ -3,11 +3,10 @@ import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 
 const ReviewsSection = styled.section`
   overflow: hidden;
+  margin-block: 8rem;
 `
 
 const ReviewsContainer = styled(BootstrapContainer)`
-  margin-block: 8rem;
-
   .glide {
     width: 50%;
     margin-inline: auto;

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import GreenButton from '../../SharedComponents/GreenButton/GreenButton'
+import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
 import {
   SubHeading,
   Grid,
@@ -10,7 +10,7 @@ import {
   Container,
   Wrapper
 } from './styles'
-import ModalContext from '../../../ModalContext'
+import ModalContext, { ModalContextType } from '../../../ModalContext'
 
 type SingleElement = {
   timelineIcon: any
@@ -31,7 +31,8 @@ const TimeLine = ({
   timelineModaltext,
   timelineRepeater
 }: IProps): JSX.Element => {
-  const { openModal } = React.useContext(ModalContext)
+  const { openModal } = React.useContext(ModalContext) as ModalContextType
+
   return (
     <Container>
       <StaticImage
@@ -70,7 +71,7 @@ const TimeLine = ({
         <Wrapper
           dangerouslySetInnerHTML={{ __html: timelineParagraph }}
         ></Wrapper>
-        <GreenButton onClick={openModal}>{timelineModaltext}</GreenButton>
+        <ModalButton onClick={openModal}>{timelineModaltext}</ModalButton>
       </Content>
     </Container>
   )

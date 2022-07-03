@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <BootstrapContainer>
-        <Link to="/">
+        <Link to="/" title="Strona główna">
           <StaticImage
             src="../../images/logo.png"
             alt="logo"
@@ -34,7 +34,9 @@ const Nav = () => {
             menuItems.map(({ databaseId, label, path }) => {
               return (
                 <li key={databaseId}>
-                  <Link to={path}>{label}</Link>
+                  <Link to={path} title={label}>
+                    {label}
+                  </Link>
                 </li>
               )
             })}

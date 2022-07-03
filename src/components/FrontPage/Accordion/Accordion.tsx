@@ -41,7 +41,9 @@ const Accordion = ({ qaArray }: IProps): JSX.Element => {
 export default Accordion
 
 const Container = styled(BootstrapContainer)`
-  border-radius: 32px 32px 100px;
+  /* border-radius: 32px 32px 100px;
   background-color: ${({ theme }) => theme.c_bg400};
-  padding-block: 2rem;
+  padding-block: 2rem; */
+  display: flex;
+  flex-direction: column;
 `

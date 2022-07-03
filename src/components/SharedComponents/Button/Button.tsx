@@ -2,7 +2,12 @@ import { Link } from 'gatsby'
 import React, { memo } from 'react'
 import styled from 'styled-components'
 
-const WhiteButton = ({ children, to }) => {
+type IProps = {
+  children: JSX.Element | string
+  to: string
+}
+
+const StyledLink = ({ children, to }: IProps) => {
   return <StyledButton to={to}>{children}</StyledButton>
 }
 
@@ -18,4 +23,4 @@ const StyledButton = styled(Link)`
   }
 `
 
-export default memo(WhiteButton)
+export default memo(StyledLink)

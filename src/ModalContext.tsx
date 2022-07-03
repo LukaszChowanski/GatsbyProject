@@ -1,8 +1,8 @@
-import React, { createContext } from 'react'
+import { createContext } from 'react'
 
-type GlobalContent = {
-  openModal: (e: React.MouseEvent<HTMLElement>) => void
+export type ModalContextType = {
+  openModal: () => void
 }
-const ModalContext = createContext<GlobalContent | null>(null)
+const ModalContext = createContext<ModalContextType | null>(null)
 
 export default ModalContext

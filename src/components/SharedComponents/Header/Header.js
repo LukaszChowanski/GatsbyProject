@@ -8,11 +8,7 @@ const Header = ({ title, gatsbyImage, children }) => {
     <Container>
       <ImgContainer>
         {!gatsbyImage && (
-          <StaticImage
-            src="./hero_bg_optimized.jpg"
-            alt="zdjęcie"
-            layout="fullWidth"
-          />
+          <StaticImage src="./trushotz.jpg" alt="zdjęcie" layout="fullWidth" />
         )}
         {gatsbyImage && <GatsbyImage image={gatsbyImage} alt="" />}
       </ImgContainer>
