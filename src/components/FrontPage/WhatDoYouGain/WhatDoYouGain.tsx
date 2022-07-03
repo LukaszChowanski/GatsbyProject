@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { getImage } from 'gatsby-plugin-image'
+
 import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
 import {
   StyledSection,
@@ -9,14 +10,8 @@ import {
   LeftColumn,
   Content
 } from './style'
-import ModalContext from '../../../ModalContext'
-
-type IProps = {
-  whatdoyougainBtntext: string
-  whatdoyougainHeading: string
-  whatdoyougainImg: any
-  whatdoyougainParagraph: string
-}
+import ModalContext, { ModalContextType } from '../../../ModalContext'
+import { IProps } from './type'
 
 const WhatDoYouGain = ({
   whatdoyougainBtntext,
@@ -24,9 +19,9 @@ const WhatDoYouGain = ({
   whatdoyougainImg,
   whatdoyougainParagraph
 }: IProps): JSX.Element => {
-  const img = getImage(whatdoyougainImg.localFile)
+  const img = whatdoyougainImg ? getImage(whatdoyougainImg.localFile) : null
 
-  const { openModal } = useContext(ModalContext)
+  const { openModal } = useContext(ModalContext) as ModalContextType
 
   return (
     <StyledSection>
