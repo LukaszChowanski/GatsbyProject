@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
-import StyledSection, { Container, ImageContainer } from './style'
-import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
 import { getImage } from 'gatsby-plugin-image'
+
+import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
 import ModalContext, { ModalContextType } from '../../../ModalContext'
 import StyledLink from '../../SharedComponents/StyledLink'
+
 import { IProps } from './type'
+import StyledSection, { Container, ImageContainer } from './style'
 
 const Hero = ({
   heroMainheading,
