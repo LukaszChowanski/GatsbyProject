@@ -1,7 +1,15 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import styled, { css } from 'styled-components'
 
-const StyledSection = styled.section`
+type SectionProps = {
+  id?: 'content'
+}
+
+type ContentProps = {
+  isImage: boolean
+}
+
+const StyledSection = styled.section<SectionProps>`
   width: 100%;
   margin: 5rem 0;
 
@@ -46,7 +54,7 @@ const Background = styled.div`
   border-radius: 16px;
 `
 
-const Content = styled.article`
+const Content = styled.article<ContentProps>`
   padding: 2rem;
   display: flex;
   flex-direction: column;
