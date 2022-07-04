@@ -1,14 +1,9 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { StyledLi, Wrapper } from '../style'
+import { ISingleReview } from '../type'
 
-type IProps = {
-  title: string
-  content: string
-  id: number
-}
-
-const Review = ({ id, title, content }: IProps) => {
+const Review = ({ id, title, content }: ISingleReview) => {
   return (
     <StyledLi key={id} className="glide__slide">
       <h3>

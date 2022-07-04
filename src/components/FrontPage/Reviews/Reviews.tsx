@@ -5,25 +5,9 @@ import '@glidejs/glide/dist/css/glide.core.min.css'
 import { ReviewsSection, ReviewsContainer } from './style'
 import Bullet from './Bullets/Bullets'
 import Review from './Review/Review'
+import { IReviews } from './type'
 
-type ReviewsLink = {
-  target: string
-  title: string
-  url: string
-}
-
-type SingleReview = {
-  title: string
-  content: string
-  id: number
-}
-
-type IProps = {
-  reviewsLink: ReviewsLink
-  reviewsList: SingleReview[]
-}
-
-const Reviews = ({ reviewsLink, reviewsList }: IProps): JSX.Element => {
+const Reviews = ({ reviewsList }: IReviews): JSX.Element => {
   let slider: any
 
   useEffect(() => {
