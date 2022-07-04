@@ -1,12 +1,8 @@
 import React from 'react'
 import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 import SinglePost from './SinglePost/SinglePost'
-import IPost from './types'
+import { IProps } from './types'
 import PostsList, { BlogPostsSection } from './style'
-
-type IProps = {
-  blogpostsPostlist: IPost[]
-}
 
 const BlogPosts = ({ blogpostsPostlist }: IProps): JSX.Element => {
   return (

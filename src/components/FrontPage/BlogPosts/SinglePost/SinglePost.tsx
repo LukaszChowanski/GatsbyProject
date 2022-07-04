@@ -1,6 +1,6 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useState } from 'react'
-import IProps from '../types'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { IPost } from '../types'
 import { StyledLi, ContentLi, LinkStickBottom } from '../style'
 
 const SinglePost = ({
@@ -8,7 +8,7 @@ const SinglePost = ({
   featuredImage,
   title,
   uri
-}: IProps): JSX.Element => {
+}: IPost): JSX.Element => {
   const [isEnter, setIsEnter] = useState(false)
   const img = getImage(featuredImage.node.localFile)
 

@@ -1,4 +1,4 @@
-type IPost = {
+export type IPost = {
   excerpt: string
   featuredImage: any
   title: string
@@ -6,4 +6,6 @@ type IPost = {
   id: number
 }
 
-export default IPost
+export type IProps = {
+  blogpostsPostlist: IPost[]
+}
