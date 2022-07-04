@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { getImage } from 'gatsby-plugin-image'
 
 import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
-import ModalContext, { ModalContextType } from '../../../ModalContext'
 import StyledLink from '../../SharedComponents/StyledLink'
 
 import { IProps } from './type'
@@ -16,7 +15,6 @@ const Hero = ({
   heroBgimg: { localFile }
 }: IProps) => {
   const img = getImage(localFile)
-  const { openModal } = useContext(ModalContext) as ModalContextType
 
   return (
     <StyledSection>
@@ -25,7 +23,7 @@ const Hero = ({
         <h1>{heroMainheading}</h1>
         <h2>{heroSubheading}</h2>
         <p>{heroParagraph}</p>
-        <ModalButton onClick={openModal}>{heroModalbtncontent}</ModalButton>
+        <ModalButton>{heroModalbtncontent}</ModalButton>
         <StyledLink to="/#content">Dowiedz się więcej</StyledLink>
       </Container>
     </StyledSection>

@@ -1,13 +1,15 @@
-import React, { memo } from 'react'
+import React, { memo, useContext } from 'react'
 import styled from 'styled-components'
+import ModalContext, { ModalContextType } from '../../../ModalContext'
 
 type IProps = {
   children: React.ReactNode
-  onClick: () => void
 }
 
-const GreenButton = ({ children, onClick }: IProps) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>
+const ModalButton = ({ children }: IProps) => {
+  const { openModal } = useContext(ModalContext) as ModalContextType
+
+  return <StyledButton onClick={openModal}>{children}</StyledButton>
 }
 
 const StyledButton = styled.button`
@@ -23,4 +25,4 @@ const StyledButton = styled.button`
       ${({ theme: { c_btnBgColoredBs } }) => c_btnBgColoredBs ?? '#fff'};
   }
 `
-export default memo(GreenButton)
+export default memo(ModalButton)

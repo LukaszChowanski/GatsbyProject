@@ -1,18 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-
-import { StyledNav, MenuListOfElements, Button, Burger } from './style'
-import BootstrapContainer from '../SharedComponents/BootstrapContainer'
-
-import ModalContext from '../../ModalContext'
 import { StaticImage } from 'gatsby-plugin-image'
+
+import BootstrapContainer from '../SharedComponents/BootstrapContainer'
+import ModalButton from '../SharedComponents/ModalButton/ModalButton'
+
+import { StyledNav, MenuListOfElements, Burger } from './style'
 
 const Nav = () => {
   const data = useStaticQuery(navData),
     menuItems = data.wpMenu.menuItems.nodes
 
   const [isHidden, setIsHidden] = useState(true)
-  const { openModal } = useContext(ModalContext)
 
   const handleBurgerClick = () => {
     setIsHidden(!isHidden)
@@ -41,7 +40,7 @@ const Nav = () => {
               )
             })}
         </MenuListOfElements>
-        <Button onClick={openModal}>Modal</Button>
+        <ModalButton>Modal</ModalButton>
         <Burger onClick={handleBurgerClick} aria-label="main menu toggle" />
       </BootstrapContainer>
     </StyledNav>

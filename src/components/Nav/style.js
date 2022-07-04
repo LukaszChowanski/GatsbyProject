@@ -79,28 +79,6 @@ const MenuListOfElements = styled.ul`
   }
 `
 
-const Button = styled.button`
-  background-color: ${({ theme }) => theme.c_btnBgColored};
-  box-shadow: 0px 8px 16px #00000028;
-  color: ${({ theme }) => theme.c_btnLight};
-  font-size: 16px;
-  text-align: center;
-  max-width: 100%;
-  transition: all 0.3s;
-  margin-block: 8px;
-
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 16px ${({ theme }) => theme.c_btnBgColoredBs};
-  }
-
-  @media (max-width: 1064px) {
-    max-width: fit-content;
-    justify-self: center;
-    margin-right: 0;
-  }
-`
-
 const Burger = styled.button`
   width: 29px;
   height: 29px;
@@ -114,4 +92,4 @@ const Burger = styled.button`
   }
 `
 
-export { StyledNav, MenuListOfElements, Button, Burger }
+export { StyledNav, MenuListOfElements, Burger }

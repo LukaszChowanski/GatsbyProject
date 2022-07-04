@@ -10,7 +10,6 @@ import {
   Container,
   Wrapper
 } from './styles'
-import ModalContext, { ModalContextType } from '../../../ModalContext'
 
 type SingleElement = {
   timelineIcon: any
@@ -31,8 +30,6 @@ const TimeLine = ({
   timelineModaltext,
   timelineRepeater
 }: IProps): JSX.Element => {
-  const { openModal } = React.useContext(ModalContext) as ModalContextType
-
   return (
     <Container>
       <StaticImage
@@ -71,7 +68,7 @@ const TimeLine = ({
         <Wrapper
           dangerouslySetInnerHTML={{ __html: timelineParagraph }}
         ></Wrapper>
-        <ModalButton onClick={openModal}>{timelineModaltext}</ModalButton>
+        <ModalButton>{timelineModaltext}</ModalButton>
       </Content>
     </Container>
   )
