@@ -2,29 +2,11 @@ import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import ModalButton from '../../SharedComponents/ModalButton/ModalButton'
-import {
-  SubHeading,
-  Grid,
-  H2Wrapper,
-  Content,
-  Container,
-  Wrapper
-} from './styles'
+import { H2Wrapper, Content, Container, Wrapper } from './styles'
+import { IProps } from './type'
+import TimelineList from './Timeline/Timeline'
 
-type SingleElement = {
-  timelineIcon: any
-  timelineSubheading: string
-  timelineSubparagraph: string
-}
-
-type IProps = {
-  timelineHeading: string
-  timelineParagraph: string
-  timelineModaltext: string
-  timelineRepeater: Array<SingleElement>
-}
-
-const TimeLine = ({
+const TimeLineSection = ({
   timelineHeading,
   timelineParagraph,
   timelineModaltext,
@@ -48,23 +30,7 @@ const TimeLine = ({
             aliquip ex ea commodo consequat.
           </p>
         </H2Wrapper>
-        <Grid>
-          {timelineRepeater.map(
-            ({ timelineSubheading, timelineSubparagraph }, index) => {
-              return (
-                <li key={index}>
-                  <SubHeading>{timelineSubheading}</SubHeading>
-                  <div>
-                    <h3>Lorem ipsum</h3>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: timelineSubparagraph }}
-                    ></div>
-                  </div>
-                </li>
-              )
-            }
-          )}
-        </Grid>
+        <TimelineList timelineRepeater={timelineRepeater} />
         <Wrapper
           dangerouslySetInnerHTML={{ __html: timelineParagraph }}
         ></Wrapper>
@@ -74,4 +40,4 @@ const TimeLine = ({
   )
 }
 
-export default TimeLine
+export default TimeLineSection

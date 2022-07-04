@@ -63,7 +63,7 @@ const H2Wrapper = styled.div`
   }
 `
 
-const Grid = styled.ul`
+const Timeline = styled.ul`
   list-style: none;
   position: relative;
   display: flex;
@@ -127,4 +127,4 @@ const SubHeading = styled.div`
     border-radius: 50%;
   }
 `
-export { SubHeading, Grid, H2Wrapper, Content, Container, Wrapper }
+export { SubHeading, Timeline, H2Wrapper, Content, Container, Wrapper }

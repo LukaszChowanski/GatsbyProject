@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Hero from './Hero/Hero'
 import SimpleSection from './SimpleSection/SimpleSection'
 import WhatDoYouGain from './WhatDoYouGain/WhatDoYouGain'
-import TimeLine from './TimeLine/TimeLine'
+import TimeLineSection from './TimeLineSection/TimeLineSection'
 import Reviews from './Reviews/Reviews'
 import BlogPosts from './BlogPosts/BlogPosts'
 import Accordion from './Accordion/Accordion'
@@ -24,7 +24,7 @@ const HomeFlexibleContent = () => {
           case 'page_Homepage_FlexibleContent_Whatdoyougain':
             return <WhatDoYouGain key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Timeline':
-            return <TimeLine key={index} {...item} />
+            return <TimeLineSection key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Blogposts':
             return <BlogPosts key={index} {...item} />
           case 'page_Homepage_FlexibleContent_Reviews':
