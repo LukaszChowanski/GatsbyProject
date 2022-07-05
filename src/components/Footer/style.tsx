@@ -13,7 +13,7 @@ export const FooterContainer = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding-block: 22px;
-  border-radius: 32px 32px 0 0;
+  border-radius: 16px 16px 0 0;
   box-shadow: 0px 8px 16px #00000029;
   border-bottom: 3px solid ${({ theme }) => theme.c_decoration};
 

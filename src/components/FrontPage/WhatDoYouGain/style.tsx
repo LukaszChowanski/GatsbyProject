@@ -80,7 +80,7 @@ const Wrapper = styled.div`
   }
 `
 const BackgroundImage = styled(GatsbyImage)`
-  border-radius: 32px 0 0 32px;
+  border-radius: 16px 0 0 16px;
   position: absolute;
   right: 0;
   top: 0;
@@ -89,7 +89,7 @@ const BackgroundImage = styled(GatsbyImage)`
 
   &::before {
     content: '';
-    border-radius: 32px 0 0 32px;
+    border-radius: 16px 0 0 16px;
     position: absolute;
     inset: 0;
     background-color: ${({ theme }) => theme.c_decorationBs};

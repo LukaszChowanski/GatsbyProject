@@ -48,7 +48,6 @@ const homepageQuery = graphql`
             heroMainheading
             heroModalbtncontent
             heroParagraph
-            heroSubheading
             heroBgimg {
               localFile {
                 childImageSharp {

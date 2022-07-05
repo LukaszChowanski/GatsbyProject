@@ -40,7 +40,7 @@ const Nav = () => {
               )
             })}
         </MenuListOfElements>
-        <ModalButton>Modal</ModalButton>
+        <ModalButton>Umów się</ModalButton>
         <Burger onClick={handleBurgerClick} aria-label="main menu toggle" />
       </BootstrapContainer>
     </StyledNav>

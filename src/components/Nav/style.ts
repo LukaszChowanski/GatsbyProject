@@ -3,7 +3,7 @@ import bgc from '../../images/list.svg'
 
 const StyledNav = styled.nav`
   max-width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   width: 100%;
   top: 0;
@@ -48,7 +48,6 @@ const MenuListOfElements = styled.ul`
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 4px;
 
     &[aria-current='page'] {
       text-decoration: underline 3px ${({ theme }) => theme.c_decoration};
@@ -65,7 +64,7 @@ const MenuListOfElements = styled.ul`
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    border-radius: 0 0 32px 32px;
+    border-radius: 0 0 16px 16px;
     transition: all 0.4s;
     align-items: center;
 

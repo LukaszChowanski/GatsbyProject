@@ -17,7 +17,7 @@ const StyledButton = styled.button`
     c_btnBgColored ?? '#fff'};
   box-shadow: 0 8px 16px ${({ theme: { c_btnBgBs } }) => c_btnBgBs ?? '#fff'};
   color: ${({ theme: { c_btnLight } }) => c_btnLight ?? '#fff'};
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
   transition: all 0.3s;
 
   &:hover {

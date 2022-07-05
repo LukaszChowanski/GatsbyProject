@@ -31,14 +31,14 @@ const StyledOl = styled.ol`
   }
 
   .gatsby-image-wrapper {
-    border-radius: 32px;
+    border-radius: 16px;
   }
 
   img {
     height: 230px;
     width: 100%;
     box-shadow: 0px 3px 24px #00000029;
-    border-radius: 32px;
+    border-radius: 16px;
     object-fit: cover;
     object-position: center;
   }

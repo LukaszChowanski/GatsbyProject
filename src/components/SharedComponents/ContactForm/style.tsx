@@ -103,7 +103,7 @@ const Content = styled.div`
 
   input {
     height: 32px;
-    border-radius: 8px;
+    border-radius: 16px;
     border: none;
     padding-inline: 1rem;
   }
@@ -130,7 +130,7 @@ const Background = styled(GatsbyImage)`
     inset: 0;
     z-index: 3;
     background-color: #000000a1;
-    border-radius: 8px;
+    border-radius: 16px;
   }
 `
 const LabelCol = styled.label`

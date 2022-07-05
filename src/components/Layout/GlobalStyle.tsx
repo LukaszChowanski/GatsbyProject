@@ -9,7 +9,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
   }
+  
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -77,7 +79,7 @@ a {
 
 img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 @media (max-width: 768px) {

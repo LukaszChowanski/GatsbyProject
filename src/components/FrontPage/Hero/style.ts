@@ -48,7 +48,6 @@ const StyledSection = styled.section`
 
   a {
     box-shadow: none;
-    border-radius: 8px 8px 0 0;
   }
 
   ${({ theme }) => theme.b_small} {
@@ -58,5 +57,11 @@ const StyledSection = styled.section`
   }
 `
 
+const CtaWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+`
+
 export default StyledSection
-export { Container, ImageContainer }
+export { Container, ImageContainer, CtaWrapper }

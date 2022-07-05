@@ -49,7 +49,7 @@ const ContentLi = styled.div<{ hover: boolean }>`
   height: 200px;
   align-self: flex-end;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   margin: 1rem 1rem 0 1rem;
   padding: 1rem 1rem 3rem 1rem;
   box-shadow: 0 8px 24px #00000019;

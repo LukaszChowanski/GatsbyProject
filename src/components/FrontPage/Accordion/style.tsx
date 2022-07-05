@@ -22,7 +22,7 @@ export const StyledSection = styled.section<SectionProps>`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.c_bg400};
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 2rem;
   position: relative;
   cursor: pointer;

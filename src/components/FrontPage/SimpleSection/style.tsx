@@ -21,19 +21,19 @@ const ImageContainer = styled(GatsbyImage)`
   position: absolute;
   inset: 0;
   background-color: ${({ theme }) => theme.c_bg400};
-  border-radius: 8px;
+  border-radius: 16px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 8px;
+    border-radius: 16px;
     background-color: #70707080;
     z-index: 1;
   }
 
   img {
-    border-radius: 8px;
+    border-radius: 16px;
   }
 `
 
