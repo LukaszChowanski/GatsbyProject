@@ -1,13 +1,19 @@
 import styled, { css } from 'styled-components'
 import plus from '/src/images/plus.svg'
 import minus from '/src/images/minus.svg'
+import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 
-type SectionProps = {
+interface SectionProps {
   readonly show?: boolean
-  readonly height?: number | undefined
+  readonly height?: string
 }
 
-export default styled.section<SectionProps>`
+export const Container = styled(BootstrapContainer)`
+  display: flex;
+  flex-direction: column;
+`
+
+export const StyledSection = styled.section<SectionProps>`
   width: 100%;
   color: #707070;
   overflow: hidden;

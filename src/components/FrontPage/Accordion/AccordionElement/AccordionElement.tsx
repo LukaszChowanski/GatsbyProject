@@ -1,13 +1,6 @@
-import React, { useRef } from 'react'
-import StyledSection from './style'
-
-type ISimple = {
-  accordionAnswer: string
-  accordionQuestion: string
-  onClick: (index: number) => void
-  isVisible: boolean | undefined
-  index: number
-}
+import React, { useEffect, useRef, useState } from 'react'
+import { IAccordionElement } from '../type'
+import { StyledSection } from '../style'
 
 const AccordionElement = ({
   accordionAnswer,
@@ -15,13 +8,18 @@ const AccordionElement = ({
   isVisible,
   onClick,
   index
-}: ISimple) => {
+}: IAccordionElement) => {
   const myRef = useRef<HTMLElement>(null)
+  const [height, setHeight] = useState<number | undefined>(undefined)
+
+  useEffect(() => {
+    setHeight(myRef?.current?.clientHeight)
+  }, [myRef])
 
   return (
     <StyledSection
       show={isVisible}
-      height={myRef?.current?.clientHeight}
+      height={height}
       onClick={() => onClick(index)}
     >
       <h2 className="h3">{accordionQuestion}</h2>

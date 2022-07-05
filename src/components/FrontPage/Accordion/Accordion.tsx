@@ -1,26 +1,11 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import BootstrapContainer from '../../SharedComponents/BootstrapContainer'
 import AccordionElement from './AccordionElement/AccordionElement'
+import { Container } from './style'
+import { IAccordion } from './type'
 
-type AccordionElement = {
-  accordionAnswer: string
-  accordionQuestion: string
-}
-
-type IProps = {
-  qaArray: AccordionElement[]
-}
-
-const Accordion = ({ qaArray }: IProps): JSX.Element => {
-  const [visibleElement, setVisibleElement] = useState<number | null>(null)
+const Accordion = ({ qaArray }: IAccordion): JSX.Element => {
+  const [visibleElement, setVisibleElement] = useState<number>(0)
   const onClick = (index: number) => {
-    //if clicked on visible element hide element
-    if (visibleElement === index) {
-      setVisibleElement(null)
-      return
-    }
-
     setVisibleElement(index)
   }
   return (
@@ -31,7 +16,7 @@ const Accordion = ({ qaArray }: IProps): JSX.Element => {
           {...item}
           index={index}
           onClick={onClick}
-          isVisible={visibleElement == index}
+          isVisible={visibleElement === index}
         ></AccordionElement>
       ))}
     </Container>
@@ -39,11 +24,3 @@ const Accordion = ({ qaArray }: IProps): JSX.Element => {
 }
 
 export default Accordion
-
-const Container = styled(BootstrapContainer)`
-  /* border-radius: 32px 32px 100px;
-  background-color: ${({ theme }) => theme.c_bg400};
-  padding-block: 2rem; */
-  display: flex;
-  flex-direction: column;
-`
