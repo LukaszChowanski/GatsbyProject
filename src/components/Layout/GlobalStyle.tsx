@@ -30,7 +30,7 @@ h2,
 
 h3,
 .h3 {
-  font: normal normal 700 28px/28px "Roboto Condensed", sans-serif;
+  font: normal normal 700 24px/28px "Roboto Condensed", sans-serif;
   color: ${c_headings};
 }
 

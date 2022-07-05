@@ -19,8 +19,7 @@ const StyledButton = styled(Link)`
   transition: all 0.3s;
 
   &:hover {
-    box-shadow: 0 8px 16px
-      ${({ theme: { c_btnBgColoredBs } }) => c_btnBgColoredBs ?? '#fff'};
+    box-shadow: 0 4px 16px ${({ theme: { c_btnBgBs } }) => c_btnBgBs ?? '#fff'};
   }
 `
 

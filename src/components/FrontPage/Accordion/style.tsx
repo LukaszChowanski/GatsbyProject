@@ -66,7 +66,7 @@ export const StyledSection = styled.section<SectionProps>`
 
   .hiddenContent {
     max-height: 0px;
-    transition: all 0.35s;
+    transition: all 0.95s ease-in-out;
     padding-inline: 2rem;
     overflow: hidden;
   }
@@ -100,6 +100,7 @@ export const StyledSection = styled.section<SectionProps>`
 
       .hiddenContent {
         max-height: ${height}px;
+        transition: all 0.95 ease-in-out;
       }
     `}
 

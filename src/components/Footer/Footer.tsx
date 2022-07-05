@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Container, FooterContainer } from './style'
+import { Thanks } from '../FrontPage/BlogPosts/style'
 
 const Footer = () => {
   const {
@@ -23,7 +24,14 @@ const Footer = () => {
               ))}
           </ul>
         </nav>
-        <a href="https://www.pexels.com/">Zdjecia: https://www.pexels.com/</a>
+        <Thanks>
+          <a href="https://www.pexels.com/" target="_blank">
+            Zdjecia: https://www.pexels.com/
+          </a>
+          <a href="https://icons8.com/" target="_blank">
+            Ikonki: https://icons8.com/
+          </a>
+        </Thanks>
       </FooterContainer>
     </Container>
   )

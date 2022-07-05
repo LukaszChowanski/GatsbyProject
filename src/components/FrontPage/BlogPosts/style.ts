@@ -25,6 +25,7 @@ const StyledLi = styled.li`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   height: 100%;
+  padding-bottom: 1.5rem;
 
   .gatsby-image-wrapper {
     grid-column: 1 / -1;
@@ -100,8 +101,16 @@ const LinkStickBottom = styled(StyledLink)`
   transform: translateY(50%);
   margin-top: auto;
   text-align: center;
-  /* background-color: ${({ theme }) => theme.c_decorationBs};
-  color: #fff; */
 `
 
-export { BlogPostsSection, StyledLi, ContentLi, LinkStickBottom }
+const Thanks = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  a {
+    font-size: 14px;
+    line-height: 11px;
+  }
+`
+
+export { BlogPostsSection, StyledLi, ContentLi, LinkStickBottom, Thanks }
