@@ -43,7 +43,7 @@ li {
   margin-bottom: 0;
 
   &--small {
-    font: normal normal 400 16px/18px "Roboto Condensed", sans-serif;
+    font: normal normal 400 16px/20px "Roboto Condensed", sans-serif;
   }
 }
 
@@ -101,12 +101,12 @@ img {
   span,
   label,
   li {
-    font: normal normal 400 16px/18px "Roboto Condensed", sans-serif;
+    font: normal normal 400 16px/22px "Roboto Condensed", sans-serif;
     margin-top: 0;
   margin-bottom: 0;
 
     &--small {
-      font: normal normal 400 14px/16px "Roboto Condensed", sans-serif;
+      font: normal normal 400 14px/19px "Roboto Condensed", sans-serif;
     }
   }
   button,

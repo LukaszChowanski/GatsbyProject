@@ -20,7 +20,7 @@ const StyledOl = styled.ol`
   padding-left: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  column-gap: 1rem;
+  gap: 4rem 1rem;
   margin-top: 0;
   padding: 1rem;
 

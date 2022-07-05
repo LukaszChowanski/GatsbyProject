@@ -23,6 +23,7 @@ const StyledNav = styled.nav`
     @media (max-width: 767px) {
       display: grid;
       grid-template-columns: 70px 1fr 32px;
+      justify-items: center;
     }
   }
 
@@ -55,7 +56,6 @@ const MenuListOfElements = styled.ul`
   }
 
   @media (max-width: 767px) {
-    /* display: ${({ mobile }) => (mobile ? 'none' : 'flex')}; */
     width: 100%;
     background-color: #fff;
     order: 5;

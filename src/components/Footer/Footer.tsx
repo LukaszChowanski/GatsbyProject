@@ -51,6 +51,7 @@ const FooterContainer = styled.footer`
   ${({ theme }) => theme.b_small} {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   nav {

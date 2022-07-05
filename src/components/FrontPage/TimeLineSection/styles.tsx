@@ -92,6 +92,13 @@ const Timeline = styled.ul`
   h3 {
     margin-bottom: 1rem;
   }
+
+  ${({ theme }) => theme.b_small} {
+    li {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
 `
 
 const Wrapper = styled.div`
