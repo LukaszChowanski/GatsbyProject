@@ -1,9 +1,15 @@
 import React from 'react'
 import { Container, ImgContainer } from './style'
 import BootstrapContainer from '../BootstrapContainer'
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
-const Header = ({ title, gatsbyImage, children }) => {
+type IProps = {
+  title?: string
+  gatsbyImage?: IGatsbyImageData
+  children?: React.ReactNode
+}
+
+const Header = ({ title, gatsbyImage, children }: IProps) => {
   return (
     <Container>
       <ImgContainer>

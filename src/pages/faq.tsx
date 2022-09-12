@@ -1,19 +1,19 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { PageProps, graphql } from 'gatsby'
 
 import Layout from '../components/Layout/layout'
 import Seo from '../components/seo'
 import Header from '../components/SharedComponents/Header/Header'
 import Accordion from '../components/FrontPage/Accordion/Accordion'
 
-const Faq = props => {
-  const qa = props.data.wpPage.subpages.subpageElasticContent[0].accordionList
-  const title = props.data.site.siteMetadata.title
+const Faq = ({ data }: any): JSX.Element => {
+  const qa = data.wpPage.subpages.subpageElasticContent[0].accordionList
+  const title = data.site.siteMetadata.title
   return (
     <Layout>
       <Seo title={title} />
-      <Header title={props.data.wpPage.title}></Header>
-      <Accordion qaArray={qa}></Accordion>
+      <Header title={data.wpPage.title}></Header>
+      <Accordion qaArray={qa} />
     </Layout>
   )
 }

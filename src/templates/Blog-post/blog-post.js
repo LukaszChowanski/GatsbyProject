@@ -29,10 +29,6 @@ import { getImage } from 'gatsby-plugin-image'
 // }
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
-  const featuredImage = {
-    sourceUrl: post.featuredImage?.node?.sourceUrl,
-    alt: post.featuredImage?.node?.alt || ``
-  }
   const image = getImage(post.featuredImage.node.localFile)
 
   return (
@@ -40,11 +36,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       <Seo title={post.title} description={post.excerpt} />
 
       <StyledArticle>
-        <Header
-          title={post.title}
-          background={featuredImage.sourceUrl}
-          gatsbyImage={image}
-        />
+        <Header title={post.title} gatsbyImage={image} />
 
         <BootstrapContainer>
           {!!post.content && (

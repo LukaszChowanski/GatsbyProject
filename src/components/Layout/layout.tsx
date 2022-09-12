@@ -5,8 +5,8 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useEffect, useRef } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import React, { useRef } from 'react'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 import Footer from '../Footer/Footer'
 import Nav from '../Nav/Nav'
@@ -22,22 +22,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   const clickRef = useRef<HTMLDivElement>(null)
-  const [isVisible, openModal, closeModal] = useModal()
-
-  const handleClick = (ev: MouseEvent) => {
-    if (clickRef.current && !clickRef.current.contains(ev.target as Node)) {
-      closeModal()
-    }
-  }
-
-  useEffect(() => {
-    if (isVisible) {
-      document.addEventListener('click', handleClick)
-    }
-    return () => {
-      document.removeEventListener('click', handleClick)
-    }
-  }, [isVisible])
+  const [isVisible, openModal, closeModal] = useModal(clickRef)
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,11 +35,9 @@ const Layout = ({ children }: LayoutProps) => {
 
           <main>{children}</main>
           <Footer />
-          {isVisible && (
-            <Modal>
-              <ContactForm ref={clickRef} closeModal={closeModal} />
-            </Modal>
-          )}
+          <Modal isActive={isVisible}>
+            <ContactForm ref={clickRef} closeModal={closeModal} />
+          </Modal>
         </MainContainer>
       </ModalContext.Provider>
     </ThemeProvider>
@@ -70,13 +53,20 @@ const MainContainer = styled.div`
   max-width: 1920px;
   min-height: 100vh;
 `
-const Modal = styled.div`
+const Modal = styled.div<{ isActive: boolean }>`
   position: fixed;
   inset: 0;
   z-index: 9999;
   backdrop-filter: blur(8px);
-  display: grid;
+  display: none;
   place-content: center;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      display: grid;
+    `}
+
   & > div {
     padding: 1rem;
 
