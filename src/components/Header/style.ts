@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
   }
 `
 
-const MenuListOfElements = styled.ul`
+const MenuListOfElements = styled.ul<{ mobile: boolean }>`
   display: flex;
   background-color: #fff;
   gap: 1rem;

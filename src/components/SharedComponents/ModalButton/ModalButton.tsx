@@ -1,13 +1,13 @@
 import React, { memo, useContext } from 'react'
 import styled from 'styled-components'
-import ModalContext, { ModalContextType } from '../../../ModalContext'
+import { ModalContext, TModalContext } from '../../../context/ModalContext'
 
 type IProps = {
   children: React.ReactNode
 }
 
 const ModalButton = ({ children }: IProps) => {
-  const { openModal } = useContext(ModalContext) as ModalContextType
+  const { openModal } = useContext(ModalContext) as TModalContext
 
   return <StyledButton onClick={openModal}>{children}</StyledButton>
 }
